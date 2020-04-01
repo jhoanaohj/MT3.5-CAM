@@ -1,0 +1,5 @@
+This directory is for the project code_base of CAM Dashboard's following components.
+
+CAM Dashboard Components
+1. CAM Dashboard
+2. CAM Inventory with Machine Profiling
