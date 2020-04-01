@@ -1,0 +1,182 @@
+
+// var text = svg.selectAll("text")
+// .data(dataset)
+// .enter()
+// .append("text")
+// .text( d => d)
+// .attr("y", function (d, i){
+//     return svgHeight - d - 2;
+// })
+// .attr("x", function(d, i){
+//     return barWidth * i;
+// })
+// .attr("fill", "white");
+
+
+//AXES
+/* 4 SIGNIFICANT METHOD IN DEFINING AXES
+
+d3.axisTop();
+d3.axisRight();
+d3.axisBottom();
+d3.axisLeft();
+*/
+
+// var data = [80, 100, 56, 120, 180, 30, 40, 120, 160];
+
+// var svgWidth = 500, svgHeight = 300;
+
+// var svg = d3.select('svg')
+// .attr("width", svgWidth)
+// .attr("height", svgHeight);
+
+// var xScale = d3.scaleLinear()
+// .domain([0, d3.max(data)])
+// .range([0, svgWidth]);
+
+// var yScale = d3.scaleLinear()
+// .domain([0, d3.max(data)])
+// .range([svgHeight,0]);
+
+// var x_axis = d3.axisBottom()
+// .scale(xScale);
+
+// var y_axis = d3.axisLeft()
+// .scale(yScale);
+
+// svg.append("g")
+// .attr("transform", "translate(50, 10)")
+// .call(y_axis);
+
+// var xAxisTranslate = svgHeight - 20;
+
+// svg.append("g")
+// .attr("transform", "translate(50," + xAxisTranslate + ")")
+// .call(x_axis);
+
+
+
+//PIE CHART
+/*
+var data = [
+    {"platform": "Android", "percentage": 40.11},
+    {"platform": "Windows", "percentage": 36.69},
+    {"platform": "iOS", "percentage": 13.06}
+];
+
+var svgWidth = 500, svgHeight = 300, radius = Math.min(svgWidth, svgHeight) / 2;
+var svg = d3.select('svg')
+.attr("width", svgWidth)
+.attr("height", svgHeight);
+
+//create group element to hold pie chart
+
+var g = svg.append("g")
+.attr("transform", "translate(" + radius + "," + radius + ")");
+
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+var pie = d3.pie().value(function(d){
+    return d.percentage;
+});
+
+var path = d3.arc()
+.outerRadius(radius)
+.innerRadius(0);
+
+var arc = g.selectAll("arc")
+.data(pie(data))
+.enter() //means keeps looping in the data
+.append("g");
+
+arc.append("path")
+.attr("d", path)
+.attr("fill", function(d){
+    return color(d.data.percentage);
+})
+
+var label = d3.arc()
+.outerRadius(radius)
+.innerRadius(0)
+.text(function(d){
+    return d;
+});
+*/
+
+// const canva = d3.select(".canva");
+
+// const svg = canva.append("svg")
+//             .attr('width', '800')
+//             .attr('height', '250 ');
+
+// svg.append("circle")
+//     .attr("cx", "134")
+//     .attr("cy", "100")
+//     .attr("r", 50)
+//     .attr("fill", "blue");
+
+// svg.append("rect")
+//     .attr("width", 50)
+//     .attr("height", 50)
+//     .attr("x", 50)
+//     .attr("y",50);
+
+
+/*document.getElementById("para").style.color = "red";
+
+var paragraphs = document.getElementsByTagName("p");
+var paralenght = paragraphs.length;
+
+for(var i = 0; i<= paralenght; i++){
+    var paragraph = paragraphs.item(i);
+    paragraph.style.color = "green";
+}*/
+
+//d3.selectAll("p").style("color", "blue");
+/*
+d3.select('body').transition()
+.duration(750)
+.style('background-color','black');
+*/
+
+// d3.select('h1').transition().style('color', 'white');
+
+// const p = d3.selectAll('p');
+// p.style('color', 'red');
+
+
+// data = [4, 8, 15, 16, 23, 42];
+
+// function myChart(){
+
+//     const div = d3.create("div");
+
+//   // Apply some styles to the chart container.
+//   div.style("font", "10px sans-serif");
+//   div.style("text-align", "right");
+//   div.style("color", "white");
+
+//   // Define the initial (empty) selection for the bars.
+//   const bar = div.selectAll("div");
+
+//   // Bind this selection to the data (computing enter, update and exit).
+//   const barUpdate = bar.data(data);
+
+//   // Join the selection and the data, appending the entering bars.
+//   const barNew = barUpdate.join("div");
+
+//   // Apply some styles to the bars.
+//   barNew.style("background", "steelblue");
+//   barNew.style("padding", "3px");
+//   barNew.style("margin", "1px");
+
+//   // Set the width as a function of data.
+//   barNew.style("width", d => `${d * 10}px`);
+
+//   // Set the text of each bar as the data.
+//   barNew.text(d => d);
+
+//   // Return the chart container.
+//     return div.node();
+
+// }
