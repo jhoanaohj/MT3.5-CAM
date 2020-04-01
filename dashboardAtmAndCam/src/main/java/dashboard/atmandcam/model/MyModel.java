@@ -40,13 +40,13 @@ public class MyModel {
 	
 	@JsonProperty("id: ")
 	private String terminalId;
-	@JsonProperty("Machine Name: ")
+	@JsonProperty("machine_name")
 	private String machineName;
-	@JsonProperty("Machine Type: ")
+	@JsonProperty("machine_type")
 	private String machineType;
-	@JsonProperty("Operation Start: ")
+	@JsonProperty("operation_start")
 	private String operationStart;
-	@JsonProperty("Operation End: ")
+	@JsonProperty("operation_end")
 	private String operationEnd;
 	
 	

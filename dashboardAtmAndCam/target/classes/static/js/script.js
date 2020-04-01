@@ -59,9 +59,17 @@ var barChart = svg.selectAll("rect")
 });
 
 var url = "/queries/31370100";
-d3.json(url, function(data) {
-  console.log(data);
+// d3.json(url, function(data) {
+//   console.log(data);
+// });
+
+var jsons = '[{"id":"31370100", "machine_name":"GUMACA BRANCH CAM",' +
+        '"machine_type":"CAM","operation_start":"05:04:33","operation_end":"09:04:33"}]';
+
+d3.json(jsons, (data)=>{
+    console.log(data);
 });
+
 
 
  

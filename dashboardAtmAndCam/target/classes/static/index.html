@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing/Experiment</title>
     <script src = "src/d3.min.js"></script>
+    <script src = "src/jquery.js"></script>
+    <script>
+
+        
+
+       // window.alert(jsons);
+
+        // $(document).ready(function(){
+        //     $.ajax({
+        //         url: "jsons"
+        //     }).then(function(data){
+        //         window.alert(data.id);
+        //         $('.greeting-id').append(data.id);
+        //         $('.greeting-content').append(data.machine_name)
+        //     });
+        // });
+    </script>
 </head>
 <body>
     
     <p>Hello world</p>
+    <div>
+        <p class = "greeting-id">The Id is </p>
+        <p class = "greeting-content">The machine name is </p>
+    </div>
     
 
 
@@ -19,12 +40,6 @@
     
     <script src = "js/script.js"></script>
 
-    <script>
-        $.ajax({
-            type: 'GET',
-            url: '/queries',
-            data: {}
-        });
-    </script>
+    
 </body>
 </html>
