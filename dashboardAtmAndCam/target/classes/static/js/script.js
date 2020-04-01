@@ -1,5 +1,4 @@
 
-
 // BAR CHART
 //var dataset = [80, 100, 56, 12, 100, 30, 40, 120, 160];
 
@@ -33,35 +32,39 @@
 // })
 
 
-var dataSet = [10.9, 20, 30, 40, 50];
-var svgWidth = 500, svgHeight = 300;
-var barPadding = 5;
-var barWidth = (svgWidth / dataSet.length);
+// var dataSet = [10.9, 20, 30, 40, 50];
+// var svgWidth = 500, svgHeight = 300;
+// var barPadding = 5;
+// var barWidth = (svgWidth / dataSet.length);
 
-var svg = d3.selectAll('svg')
-.attr("width", svgWidth)
-.attr("height", svgHeight);
+// var svg = d3.selectAll('svg')
+// .attr("width", svgWidth)
+// .attr("height", svgHeight);
 
-var barChart = svg.selectAll("rect")
-.data(dataSet)
-.enter()
-.append("rect")
-.attr("y", (d) => {
-    return svgHeight - d;
-})
-.attr("height", (d)=> {
-    return d;
-})
-.attr("width", barWidth - barPadding)
-.attr("transform", (d,i)=>{
-    var translate = [barWidth * i, 0];
-    return "translate (" + translate + ")";
-});
+// var barChart = svg.selectAll("rect")
+// .data(dataSet)
+// .enter()
+// .append("rect")
+// .attr("y", (d) => {
+//     return svgHeight - d;
+// })
+// .attr("height", (d)=> {
+//     return d;
+// })
+// .attr("width", barWidth - barPadding)
+// .attr("transform", (d,i)=>{
+//     var translate = [barWidth * i, 0];
+//     return "translate (" + translate + ")";
+// });
 
+var jsonData = '[{"id":"31370100","machine_name":"GUMACA BRANCH CAM","machine_type":"CAM","operation_start":"05:04:33",operation_end":"09:04:33"}]'
 var url = "/queries/31370100";
-d3.json(url, function(data) {
+
+d3.json(jsonData, function(data) {
   console.log(data);
 });
+
+
 
 
  
