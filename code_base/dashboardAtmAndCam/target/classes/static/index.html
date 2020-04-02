@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing/Experiment</title>
+    <script src="src/d3.min.js"></script>
+</head>
+
+<body>
+
+    <p>Hello world</p>
+
+
+
+    <a href="/queries/31370100">click me!</a>
+
+    <p id="demo"></p>
+
+
+
+    <script src="js/script.js"></script>
+
+    <script>
+        var text = '{ "employees" : [' +
+            '{ "firstName":"John" , "lastName":"Doe" },' +
+            '{ "firstName":"Anna" , "lastName":"Smith" },' +
+            '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+        var jsonData = '{ "dummy" : [{"id":"31370100","machine_name":"GUMACA BRANCH CAM","machine_type":"CAM","operation_start":"05:04:33","operation_end":"09:04:33"}] }';
+        var obj = JSON.parse(jsonData);
+        document.getElementById("demo").innerHTML = obj.dummy[0].id + " " + obj.dummy[0].machine_name;
+
+        console.log(obj.dummy[0].operation_start + " "+ obj.dummy[0].operation_end)
+    </script>
+</body>
+
+</html>

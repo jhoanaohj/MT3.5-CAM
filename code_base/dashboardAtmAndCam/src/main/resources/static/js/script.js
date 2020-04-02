@@ -57,12 +57,17 @@
 //     return "translate (" + translate + ")";
 // });
 
-var jsonData = '[{"id":"31370100","machine_name":"GUMACA BRANCH CAM","machine_type":"CAM","operation_start":"05:04:33",operation_end":"09:04:33"}]'
+
 var url = "/queries/31370100";
 
-d3.json(jsonData, function(data) {
-  console.log(data);
+var jsonData2 = '[{"id":"31370100","machine_name":"GUMACA BRANCH CAM","machine_type":"CAM","operation_start":"05:04:33","operation_end":"09:04:33"}]'
+
+d3.json(jsonData2).then((data)=>{
+  console.log(data[0]);
 });
+
+// var obj = JSON.parse(jsonData);
+// document.getElementById("demo").innerHTML = obj.id + obj.machine_name;
 
 
 
