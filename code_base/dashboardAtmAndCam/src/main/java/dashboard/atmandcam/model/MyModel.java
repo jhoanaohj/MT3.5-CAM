@@ -40,7 +40,7 @@ public class MyModel {
 	@Id
 	private Long id;
 	
-	@JsonProperty("id")
+	@JsonProperty("terminal_id")
 	private String terminalId;
 	@JsonProperty("machine_name")
 	private String machineName;

@@ -3,6 +3,7 @@ package dashboard.atmandcam.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ public class MyController {
 		return myRepo.getQueryResult();
 	}
 	
-	@GetMapping("/queries/{id}")
+	@GetMapping(value = {"/queries/{id}"})
 	public List<MyModel> getSpecific(@PathVariable String id){
 		return myRepo.getSpecificResult(id);
 	}
