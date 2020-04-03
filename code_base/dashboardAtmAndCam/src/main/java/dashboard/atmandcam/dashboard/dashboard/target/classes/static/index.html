@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <title>SIDE BAR AYAW NA!</title>
+
+   <!-- Bootstrap CSS CDN -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/css/demo.css">  
+   <link rel="stylesheet" href="/css/table.css">
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+   <!-- jQuery CDN -->
+   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+   <!-- Bootstrap Js CDN -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <!-- jQuery Custom Scroller CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="/js/demo.js"></script>
+
+   
+</head>
+
+<body>
+
+   <div class="wrapper">
+      <!-- Sidebar Holder -->
+      <nav id="sidebar">
+         <div id="dismiss">
+            <i class="glyphicon glyphicon-arrow-left"></i>
+         </div>
+
+         <div class="sidebar-header">
+            <h3>SIDEB4R</h3>
+         </div>
+
+         <ul class="list-unstyled components">
+            <li><a href="#">habadu</a></li>
+            <li><a href="#">hakdog</a></li>
+            <li><a href="#">Madagascar</a></li>
+            <li><a href="#">Hello ano pa?</a></li>
+         </ul>
+
+      </nav>
+
+      <!-- Page Content Holder -->
+      <div id="content">
+
+         <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+               <div class="navbar-header">
+                  <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                     <i class="glyphicon glyphicon-align-left"></i>
+                     <span>Open Sidebar</span>
+                  </button>
+               </div>
+
+               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                     <li><a href="#">Something here!</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+
+         <div class="limiter">
+            <div class="wrap-table100">
+               <div class="table100">
+                  <table>
+                     <thead>
+                        <tr class="table100-head">
+                           <th class="column1">Date</th>
+                           <th class="column2">Order ID</th>
+                           <th class="column3">Name</th>
+                           <th class="column4">Price</th>
+                           <th class="column5">Quantity</th>
+                           <th class="column6">Total</th>
+                           <th class="column7">Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="column1">2017-09-29 01:22</td>
+                           <td class="column2">200398</td>
+                           <td class="column3">iPhone X 64Gb Grey</td>
+                           <td class="column4">$999.00</td>
+                           <td class="column5">1</td>
+                           <td class="column6">$999.00</td>
+                           <!--Modal Button-->
+                           <td class="column7"><button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                                 data-target="#myModal">Open Modal</button>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+
+         <!-- Modal -->
+         <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+               <!-- Modal content-->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Modal Header</h4>
+                  </div>
+                  <div class="modal-body">
+                     <div class="row">
+                        <div>
+                           <ul id="tabb">
+                              <li target="1" class="tabs">This</li>
+                              <li target="2" class="tabs">That</li>
+                              <li target="3" class="tabs">Those</li>
+                              <li target="4" class="tabs">These</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!--<script>
+                         var tabName[]
+                     </script> -->
+                     <div id="div1" class="tabme" style="display: block">
+                        <h1>Why you bully me</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu gravida magna. Vivamus laoreet
+                           eleifend ultrices. Proin aliquet, diam et lobortis pellentesque, ante velit porta nulla, in
+                           ultricies tortor ex in lectus. Pellentesque feugiat, dui sit amet malesuada tincidunt, orci
+                           urna rhoncus nisi, non auctor diam nunc id leo. Aenean rutrum risus quis elit consectetur
+                           mollis eu vel nisl. Sed mi nulla, cursus dictum gravida vel, tincidunt sit amet enim. Integer
+                           diam libero, pulvinar eu nibh at, sollicitudin auctor massa. Nullam lectus mauris, dignissim
+                           id sem semper, elementum semper lorem. Cras sapien dolor, gravida sit amet neque vitae,
+                           cursus facilisis ante. Phasellus turpis felis, consectetur at sem vel, pellentesque venenatis
+                           dui. Donec lorem lorem, luctus non finibus id, ullamcorper at libero. Mauris dictum, ante et
+                           auctor mollis, dui massa luctus sem, in imperdiet nulla orci at nibh. Cras ut consectetur
+                           leo. </p>
+                     </div>
+
+                     <div id="div2" class="tabme">
+                        <h1>Why you always lyin'</h1>
+                        <p>Somebody once told me the world is gonna roll me
+                           I ain't the sharpest tool in the shed
+                           She was looking kind of dumb with her finger and her thumb
+                           In the shape of an "L" on her forehead
+                           Well the years start coming and they don't stop coming
+                           Fed to the rules and I hit the ground running
+                           Didn't make sense not to live for fun
+                           Your brain gets smart but your head gets dumb
+                           So much to do, so much to see
+                           So what's wrong with taking the back streets?
+                           You'll never know if you don't go
+                           You'll never shine if you don't glow</p>
+                     </div>
+
+                     <div id="div3" class="tabme">
+                        <h1>Why are you running</h1>
+                        <p>Never gonna give you up
+                           Never gonna let you down
+                           Never gonna run around and desert you
+                           Never gonna make you cry
+                           Never gonna say goodbye
+                           Never gonna tell a lie and hurt you
+                           Never gonna give you up
+                           Never gonna let you down
+                           Never gonna run around and desert you
+                           Never gonna make you cry
+                           Never gonna say goodbye
+                           Never gonna tell a lie and hurt you</p>
+                     </div>
+
+                     <div id="div4" class="tabme">
+                        <h1>Why are you crying?</h1>
+                        <p>Number 15: Burger king foot lettuce. The last thing you'd want in your Burger King burger is
+                           someone's foot fungus. ... A 4channer uploaded a photo anonymously to the site showcasing his
+                           feet in a plastic bin of lettuce. With the statement: "This is the lettuce you eat at Burger
+                           King." Admittedly, he had shoes on.</p>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+               </div>
+               <!--End of Modal Content -->
+            </div>
+         </div>
+         <!--End of Modal -->
+      </div>
+      <!--End of Page Content-->
+
+      <div class="overlay"></div>
+   </div>
+
+   <script type="text/javascript">
+      $(document).ready(function () {
+         $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+         });
+
+         $('#dismiss, .overlay').on('click', function () {
+            $('#sidebar').removeClass('active');
+            $('.overlay').fadeOut();
+         });
+
+         $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').addClass('active');
+            $('.overlay').fadeIn();
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+         });
+      });
+   </script>
+
+
+   
+</body>
+</html>
