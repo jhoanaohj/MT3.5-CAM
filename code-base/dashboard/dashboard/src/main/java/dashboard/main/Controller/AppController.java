@@ -37,7 +37,7 @@ public class AppController {
 		return "test";
 	}
 
-	@RequestMapping(value="/queries", method=RequestMethod.GET)
+	@GetMapping(value="/queries")
 	@ResponseBody
 	public List<EntityInventory> getResult() {
 		return repositoryInventory.getQueryResult();

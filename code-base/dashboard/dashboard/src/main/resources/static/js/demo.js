@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    $("#sidebar").mCustomScrollbar({
-        theme: "minimal"
-    });
 
     $('#dismiss, .overlay').on('click', function () {
         $('#sidebar').removeClass('active');
@@ -16,26 +13,20 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready( function () {
-    $('#table_id').DataTable();
-} );
-
-$(document).ready(function (){
-	   $('#table_id').DataTable({
-	      lengthChange: false,
-	      ajax: {
-	          url: "/queries",
-	          dataSrc: 'responseData'
-	      },
-	      columns: [
-	    	  { data: "Terminal ID" }, 
-	          { data: "Machine Name" }, 
-	          { data: "Machine Type" }
-	      ],
-	      select: true
-	   });
-	});
-
-console.log(columns)
+$(document).ready(function() {
+	$.ajax({
+		url : ("./queries/"),
+		method : "GET",
+		dataType : "json",
+		success : function(data) {
+			$("#myTable").dataTable({
+				"data" : data,
+				"columns" : [{'data' : 'TerminalId'},
+					         {'data' : 'MachineName'},
+					         {'data' : 'MachineType'}]
+			})
+		}
+	})
+})
 
  

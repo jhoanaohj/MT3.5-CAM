@@ -8,7 +8,22 @@
 <script type="text/javascript" src="/DataTables/datatables.js"></script>
 </head>
 <body>
-	<table id="myTable"></table>
+	<table id="myTable">
+	<thead>
+		<tr>
+			<th>Terminal ID</th>
+			<th>Machine Name</th>
+			<th>Machine Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td> Terminal ID </td>
+			<td> Machine Name </td>
+			<td> Machine Type </td>
+		</tr>
+	</tbody>
+	</table>
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -18,9 +33,10 @@
 			dataType : "json",
 			success : function(data) {
 				$("#myTable").dataTable({
-					"columns" : [{'data' : 'id'},
-						         {'data' : 'machineName'},
-						         {'data' : 'machineType'}]
+					"data" : data,
+					"columns" : [{'data' : 'TerminalId'},
+						         {'data' : 'MachineName'},
+						         {'data' : 'MachineType'}]
 				})
 			}
 		})
