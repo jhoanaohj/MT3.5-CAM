@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @NamedNativeQueries({
 	@NamedNativeQuery(
 			name = "QueryAllData.getData", 
-			query = "SELECT terminal_id, machine_name, machine_type, operation_start, operation_end FROM dashboard.inventory  WHERE machine_type = 'CAM'", 
+			query = "SELECT terminal_id, machine_name, machine_type, operation_start, operation_end FROM dashboard.inventory WHERE machine_type = 'CAM'", 
 			resultSetMapping = "queryResult"),
 	@NamedNativeQuery(
 			name = "QuerySpecificData.getData",

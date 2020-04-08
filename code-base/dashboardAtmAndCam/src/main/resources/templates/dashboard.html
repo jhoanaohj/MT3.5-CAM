@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing/Experiment</title>
+
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="src/jquery.js"></script>
+    <script src="src/bootstrap/js/bootstrap.min.js"></script>
+    <script src="src/d3.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="rsc/mblogo.png" alt="" width="50" height="50">
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="/">CAM DASHBOARD</a>
+                </li>
+            </ul>
+            <!--End of nav.sidebar-->
+        </nav>
+        <!--Page content-->
+        <div id="content">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card shadow mb-4">
+                            <h5 class="card-header">
+                                Lorem Ipsum
+                            </h5>
+                            <div class="card-body">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow mb-4">
+                            <h5 class="card-header">
+                                Top 5 Reason for downtime
+                            </h5>
+                            <div class="card-body">
+                                <ul>
+                                    <li>a</li>
+                                    <li>b</li>
+                                    <li>c</li>
+                                    <li>d</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of div.row-->
+
+                <div class="row">
+                    <div class="card col-md-4">
+                        <h5 class="card-header">
+                            Lorem Ipsum
+                        </h5>
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac elementum nibh. Vivamus
+                                feugiat
+                                ligula eget metus elementum, ut faucibus mi dapibus. Donec ac interdum nisi. Cras urna
+                                nunc,
+                                ultrices id euismod a, elementum sed arcu. Nullam vel velit dolor. Fusce pharetra ligula
+                                metus,
+                                non
+                                aliquam tortor laoreet et. Curabitur in viverra orci. Sed eget rutrum magna. Etiam vitae
+                                dignissim
+                                urna. Praesent commodo orci aliquam placerat varius. Fusce ut bibendum metus. Nulla
+                                purus
+                                magna,
+                                ultricies nec quam vitae, faucibus bibendum nunc. Sed placerat lacus nec aliquam
+                                elementum.
+                                Ut
+                                eget
+                                rhoncus felis. In eleifend sem a faucibus mattis. Nulla quis urna tempus, venenatis leo
+                                a,
+                                tempus
+                                leo.</p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4">
+                        <h5 class="card-header">
+                            Lorem Ipsum
+                        </h5>
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac elementum nibh. Vivamus
+                                feugiat
+                                ligula eget metus elementum, ut faucibus mi dapibus. Donec ac interdum nisi. Cras urna
+                                nunc,
+                                ultrices id euismod a, elementum sed arcu. Nullam vel velit dolor. Fusce pharetra ligula
+                                metus,
+                                non
+                                aliquam tortor laoreet et. Curabitur in viverra orci. Sed eget rutrum magna. Etiam vitae
+                                dignissim
+                                urna. Praesent commodo orci aliquam placerat varius. Fusce ut bibendum metus. Nulla
+                                purus
+                                magna,
+                                ultricies nec quam vitae, faucibus bibendum nunc. Sed placerat lacus nec aliquam
+                                elementum.
+                                Ut
+                                eget
+                                rhoncus felis. In eleifend sem a faucibus mattis. Nulla quis urna tempus, venenatis leo
+                                a,
+                                tempus
+                                leo.</p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4">
+                        <h5 class="card-header">
+                            Lorem Ipsum
+                        </h5>
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac elementum nibh. Vivamus
+                                feugiat
+                                ligula eget metus elementum, ut faucibus mi dapibus. Donec ac interdum nisi. Cras urna
+                                nunc,
+                                ultrices id euismod a, elementum sed arcu. Nullam vel velit dolor. Fusce pharetra ligula
+                                metus,
+                                non
+                                aliquam tortor laoreet et. Curabitur in viverra orci. Sed eget rutrum magna. Etiam vitae
+                                dignissim
+                                urna. Praesent commodo orci aliquam placerat varius. Fusce ut bibendum metus. Nulla
+                                purus
+                                magna,
+                                ultricies nec quam vitae, faucibus bibendum nunc. Sed placerat lacus nec aliquam
+                                elementum.
+                                Ut
+                                eget
+                                rhoncus felis. In eleifend sem a faucibus mattis. Nulla quis urna tempus, venenatis leo
+                                a,
+                                tempus
+                                leo.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End of div.row-->
+            </div>
+
+
+        </div>
+        <!--End of div.content-->
+
+    </div>
+    <!--End of div.wrapper-->
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
