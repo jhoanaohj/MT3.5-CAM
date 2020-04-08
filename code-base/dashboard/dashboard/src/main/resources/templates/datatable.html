@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/DataTables/datatables.css">
+<script type="text/javascript" src="/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="/DataTables/datatables.js"></script>
+</head>
+<body>
+	<table id="myTable"></table>
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+			url : ("./queries/"),
+			method : "GET",
+			dataType : "json",
+			success : function(data) {
+				$("#myTable").dataTable({
+					"columns" : [{'data' : 'id'},
+						         {'data' : 'machineName'},
+						         {'data' : 'machineType'}]
+				})
+			}
+		})
+	})
+</script>
+</html>

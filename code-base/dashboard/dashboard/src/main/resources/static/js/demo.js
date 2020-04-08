@@ -16,13 +16,26 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
 
-      $(function () {
-         $('.tabs').click(function () {
-            $('.tabme').not('#div' + $(this).attr('target')).hide();
-            $('#div' + $(this).attr('target')).show();
-         });
-      }); 
+$(document).ready(function (){
+	   $('#table_id').DataTable({
+	      lengthChange: false,
+	      ajax: {
+	          url: "/queries",
+	          dataSrc: 'responseData'
+	      },
+	      columns: [
+	    	  { data: "Terminal ID" }, 
+	          { data: "Machine Name" }, 
+	          { data: "Machine Type" }
+	      ],
+	      select: true
+	   });
+	});
 
+console.log(columns)
 
-      
+ 

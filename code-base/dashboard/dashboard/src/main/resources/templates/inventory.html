@@ -18,7 +18,9 @@
 <!-- Bootstrap Js  -->
 <script src="/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- jQuery Custom Scroller CDN -->
-<script src="/malihu-custom-scrollbar-plugin-3.1.5/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+<script
+	src="/malihu-custom-scrollbar-plugin-3.1.5/jquery.mCustomScrollbar.concat.min.js"
+	type="text/javascript"></script>
 <script src="/js/demo.js" type="text/javascript"></script>
 <!-- Datatables -->
 <script type="text/javascript" charset="utf8"
@@ -26,31 +28,14 @@
 <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
 
 <script type="text/javascript">
-$(document).ready(function () {
-    $.ajax({
-        url: '/queries',
-        method: 'get',
-        datatype: 'json',
-        contentType: "application/json; charset=utf-8",
-        success: function (queryResult) {
-      	  /* var d = JSON.parse(data) */
-            $('#table_id').dataTable({
-                data: d,
-                "columns": [
-                { "data": "id" },
-                { "data": "Machine Name" },
-                { "data": "Machine Type" },
-                ]
-            });
-        },
-        error: function (xhr, ajaxOptions, thrownError)
-        {
-            alert(xhr.responseText);
-    }
-    });
-});
+	console.log("hello")
 
-console.log(id)
+	$(function() {
+		$('.tabs').click(function() {
+			$('.tabme').not('#div' + $(this).attr('target')).hide();
+			$('#div' + $(this).attr('target')).show();
+		});
+	});
 </script>
 
 </head>
@@ -102,27 +87,26 @@ console.log(id)
 
 			<div class="limiter">
 				<div class="wrap-table100">
-					<div class="table100">
-						<table id="table_id" class="display">
-							<thead>
-								<tr>
-									<th>Terminal ID</th>
-									<th>Machine Name</th>
-									<th>Machine Type</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td><button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-                                 data-target="#myModal">Open Modal</button></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<table id="table_main" class="display">
+						<thead>
+							<tr>
+								<th>Terminal ID</th>
+								<th>Machine Name</th>
+								<th>Machine Type</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><button type="button" class="btn btn-info btn-lg"
+										data-toggle="modal" data-target="#myModal">Open Modal</button></td>
+							</tr>
+						</tbody>
+					</table>
+
 				</div>
 			</div>
 

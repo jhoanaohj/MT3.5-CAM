@@ -15,17 +15,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 				@ColumnResult(name = "terminal_id", type = String.class),
 				@ColumnResult(name = "machine_name", type = String.class),
 				@ColumnResult(name = "machine_type", type = String.class),
+				@ColumnResult(name = "rc_code", type = String.class)
 				
 		})
 })
 @NamedNativeQueries({
 	@NamedNativeQuery(
 			name = "QueryAllData.getData", 
-			query = "SELECT terminal_id, machine_name, machine_type FROM tbl_inventory  WHERE machine_type = 'CAM'", 
+			query = "SELECT terminal_id, machine_name, machine_type, rc_code FROM tbl_inventory  WHERE machine_type = 'CAM'", 
 			resultSetMapping = "queryResult"),
 	@NamedNativeQuery(
 			name = "QuerySpecificData.getData",
-			query = "SELECT terminal_id, machine_name, machine_type FROM tbl_inventory  WHERE terminal_id = ?1",
+			query = "SELECT terminal_id, machine_name, machine_type, rc_code FROM tbl_inventory  WHERE terminal_id = ?1",
 			resultSetMapping = "queryResult"
 			)
 	
@@ -33,21 +34,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 public class EntityInventory {	
 	@Id
-	private Long id;	
-	@JsonProperty("id: ")
+	@JsonProperty("TerminalId")
 	private String terminalId;
-	@JsonProperty("Machine Name: ")
+	@JsonProperty("MachineName")
 	private String machineName;
-	@JsonProperty("Machine Type: ")
+	@JsonProperty("MachineType")
 	private String machineType;
+	@JsonProperty("RCCode")
+	private String rcCode;
 	
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getTerminalId() {
 		return terminalId;
 	}
@@ -66,12 +62,19 @@ public class EntityInventory {
 	public void setMachineType(String machineType) {
 		this.machineType = machineType;
 	}
+	public String getRcCode() {
+		return rcCode;
+	}
+	public void setRcCode(String rcCode) {
+		this.rcCode = rcCode;
+	}
 	
-	public EntityInventory(String termId, String machiName, String machiType) {
+	public EntityInventory(String termId, String machiName, String machiType, String rCode) {
 		super();
 		this.terminalId = termId;
 		this.machineName = machiName;
 		this.machineType = machiType;
+		this.rcCode = rCode;
 	}	
 	public EntityInventory() {		
 	}	

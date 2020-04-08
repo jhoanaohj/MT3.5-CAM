@@ -1,0 +1,1050 @@
+{
+	"data": [
+		{
+			"id: ": "36830101",
+			"Machine Name: ": "HEAD OFFICE CENTER CAM 1",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30340100",
+			"Machine Name: ": "BF HOMES BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30790100",
+			"Machine Name: ": "BACOLOD - CAPITOL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "38790100",
+			"Machine Name: ": "DAGUPAN - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30440100",
+			"Machine Name: ": "UN AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30140100",
+			"Machine Name: ": "PLAZA CERVANTES BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "36850100",
+			"Machine Name: ": "DOWNTOWN CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "32410100",
+			"Machine Name: ": "FAIRVIEW BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "38470100",
+			"Machine Name: ": "BATANGAS - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "31260100",
+			"Machine Name: ": "NAGA - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30520100",
+			"Machine Name: ": "ANGELES - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "33140100",
+			"Machine Name: ": "CAMARIN ROAD - CALOOCAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "38610100",
+			"Machine Name: ": "TARLAC - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "39300100",
+			"Machine Name: ": "CMSU METROTECH BLDG ( MACAPAGAL) ",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "35210100",
+			"Machine Name: ": "CEBU FUENTE OSMENA CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "32340100",
+			"Machine Name: ": "JP RIZAL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30940100",
+			"Machine Name: ": "CEBU - COLON CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "36720100",
+			"Machine Name: ": "BUTUAN - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "32360100",
+			"Machine Name: ": "CEBU - NORTH ROAD BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "30860100",
+			"Machine Name: ": "BONI AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "38560100",
+			"Machine Name: ": "LUCENA - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id: ": "38510100",
+			"Machine Name: ": "DAVAO CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36860100",
+			"Machine Name: ": "GRACE PARK CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30130100",
+			"Machine Name: ": "CUBAO - P TUAZON BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30960100",
+			"Machine Name: ": "GT TOWER CENTER  CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32210100",
+			"Machine Name: ": "BALANGA - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30700100",
+			"Machine Name: ": "BACLARAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31340100",
+			"Machine Name: ": "CAUAYAN - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30350100",
+			"Machine Name: ": "ORTIGAS COMM'L COMPLEX CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32730100",
+			"Machine Name: ": "LIBERTAD - MANDALUYONG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30810100",
+			"Machine Name: ": "DOÑA SOLEDAD AVE - BICUTAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30740100",
+			"Machine Name: ": "COTABATO - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34160100",
+			"Machine Name: ": "BAGUIO - SESSION BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36910100",
+			"Machine Name: ": "SAN PABLO - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38450100",
+			"Machine Name: ": "BAGUIO - MAGSAYSAY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38400100",
+			"Machine Name: ": "URDANETA - PANGASINAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31890100",
+			"Machine Name: ": "BONI SERRANO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31670100",
+			"Machine Name: ": "EDSA - SHAW BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35040100",
+			"Machine Name: ": "EASTWOOD CITY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36580100",
+			"Machine Name: ": "ORTIGAS - EMERALD AVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32920100",
+			"Machine Name: ": "PASEO DE ROXAS BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35450100",
+			"Machine Name: ": "ORTIGAS - SAN MIGUEL AVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30180100",
+			"Machine Name: ": "PASONG TAMO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31580100",
+			"Machine Name: ": "STA CRUZ LAGUNA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31860100",
+			"Machine Name: ": "KALAYAAN AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33920100",
+			"Machine Name: ": "MOLINO - BACOOR CAVITE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32890100",
+			"Machine Name: ": "SAN MATEO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38480100",
+			"Machine Name: ": "CABANATUAN - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32350100",
+			"Machine Name: ": "DASMARIÑAS - CAVITE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30450100",
+			"Machine Name: ": "DAU BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32440100",
+			"Machine Name: ": "FARMERS PLAZA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30390100",
+			"Machine Name: ": "IMUS - CAVITE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34020100",
+			"Machine Name: ": "CIRCUMFERENTIAL ROAD - ANTIPOLO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30380100",
+			"Machine Name: ": "KAWIT - CAVITE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31170100",
+			"Machine Name: ": "DAET BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33230100",
+			"Machine Name: ": "DON ANTONIO HEIGHTS BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34450100",
+			"Machine Name: ": "ZABARTE ROAD - NOVALICHES BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36880100",
+			"Machine Name: ": "ORMOC BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33900100",
+			"Machine Name: ": "BORONGAN - SAMAR BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31790100",
+			"Machine Name: ": "NOVALICHES  - TALIPAPA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30120100",
+			"Machine Name: ": "ILOILO - DELGADO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36100100",
+			"Machine Name: ": "ROBINSON'S PLACE - ADRIATICO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33110100",
+			"Machine Name: ": "SUSANO ROAD - NOVALICHES BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37140100",
+			"Machine Name: ": "MAYSILO CIRCLE - MANDALUYONG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33100100",
+			"Machine Name: ": "RADA - RODRIGUEZ BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38440100",
+			"Machine Name: ": "BACOLOD - ARANETA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32940100",
+			"Machine Name: ": "CALBAYOG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30070100",
+			"Machine Name: ": "SANTOLAN - PASIG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31300100",
+			"Machine Name: ": "PUERTO PRINCESA - RIZAL AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31080100",
+			"Machine Name: ": "CALAPAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31610100",
+			"Machine Name: ": "ANTIQUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31160100",
+			"Machine Name: ": "CATBALOGAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30580100",
+			"Machine Name: ": "DAVAO - RIZAL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31090100",
+			"Machine Name: ": "PAGADIAN - RIZAL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "39730100",
+			"Machine Name: ": "SURIGAO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37450100",
+			"Machine Name: ": "TUGUEGARAO - MAIN  BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31720100",
+			"Machine Name: ": "CEBU - TABUNOK BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33560100",
+			"Machine Name: ": "BAYBAY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36380100",
+			"Machine Name: ": "AYALA AVE - VA RUFINO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35710100",
+			"Machine Name: ": "BORACAY  BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31700100",
+			"Machine Name: ": "ILIGAN - MAIN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31130100",
+			"Machine Name: ": "JOLO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38410100",
+			"Machine Name: ": "DAVAO - TAGUM BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31180100",
+			"Machine Name: ": "OZAMIS - RIZAL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33460100",
+			"Machine Name: ": "CATARMAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31640100",
+			"Machine Name: ": "N A I A BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32810100",
+			"Machine Name: ": "MARBEL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31000100",
+			"Machine Name: ": "TACURONG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33690100",
+			"Machine Name: ": "MASBATE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35430100",
+			"Machine Name: ": "ILIGAN - ROXAS AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30060100",
+			"Machine Name: ": "CEBU - DOWNTOWN CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31240100",
+			"Machine Name: ": "DIPOLOG - GEN LUNA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36890100",
+			"Machine Name: ": "MALOLOS - PASEO DEL CONGRESO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36830100",
+			"Machine Name: ": "HEAD OFFICE CENTER CAM 2",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36830102",
+			"Machine Name: ": "SHANGRI-LA FORT TAGUIG CAM OFFSITE ",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35010100",
+			"Machine Name: ": "KAMAGONG - SAMPALOC BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34950100",
+			"Machine Name: ": "MADRIGAL BUS PARK - ALABANG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36010100",
+			"Machine Name: ": "LUNETA - TM KALAW BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36340100",
+			"Machine Name: ": "PASONG TAMO EXTENSION BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32600100",
+			"Machine Name: ": "SAN PEDRO - LAGUNA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35260100",
+			"Machine Name: ": "LA UNION - ML QUEZON BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32260100",
+			"Machine Name: ": "CONCEPCION - MARIKINA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34700100",
+			"Machine Name: ": "CULIAT - TANDANG SORA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38540100",
+			"Machine Name: ": "LEGAZPI - MABINI BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32760100",
+			"Machine Name: ": "ORTIGAS AVE EXT - CAINTA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31490100",
+			"Machine Name: ": "MARILAO - BULACAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36350100",
+			"Machine Name: ": "CEBU - DANAO CITY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "38210100",
+			"Machine Name: ": "FORT - SHANGRI - LA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32290100",
+			"Machine Name: ": "KAMUNING BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33270100",
+			"Machine Name: ": "PLARIDEL - BULACAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31620100",
+			"Machine Name: ": "HARRISON PLAZA - ADRIATICO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33600100",
+			"Machine Name: ": "SUCAT - SAN ANTONIO VALLEY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36080100",
+			"Machine Name: ": "DON BOSCO - MAKATI BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33010100",
+			"Machine Name: ": "FB HARRISON - GIL PUYAT AVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37280100",
+			"Machine Name: ": "BUKIDNON - MALAYBALAY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34890100",
+			"Machine Name: ": "ZAMBOANGA SIBUGAY - IPIL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35100100",
+			"Machine Name: ": "ZAMBOANGA - NUNEZ EXT BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "39960100",
+			"Machine Name: ": "ZAMBOANGA DEL SUR - MOLAVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35060100",
+			"Machine Name: ": "BACOLOD - EASTSIDE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35940100",
+			"Machine Name: ": "LEYTE - PALOMPON BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "39420100",
+			"Machine Name: ": "BACOLOD-AYALA CAPITOL CENTRAL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33670100",
+			"Machine Name: ": "CARMONA - BIÑAN HWAY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36020100",
+			"Machine Name: ": "CEBU IT PARK BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32320100",
+			"Machine Name: ": "V LUNA - EAST AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31280100",
+			"Machine Name: ": "KALIBO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37000100",
+			"Machine Name: ": "CEBU - AYALA CENTER MALL CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31320100",
+			"Machine Name: ": "BASILAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30010100",
+			"Machine Name: ": "AYALA - ALABANG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30620100",
+			"Machine Name: ": "SHAW BOULEVARD BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33500100",
+			"Machine Name: ": "LAS PIÑAS - NAGA ROAD BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33760100",
+			"Machine Name: ": "CAGAYAN DE ORO - CARMEN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31550100",
+			"Machine Name: ": "PASONG TAMO - BUENDIA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31980100",
+			"Machine Name: ": "WEST AVENUE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32460100",
+			"Machine Name: ": "CEBU - BANILAD BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31850100",
+			"Machine Name: ": "CEBU - LAPU - LAPU BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35570100",
+			"Machine Name: ": "DUMAGUETE - CAPITOL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32670100",
+			"Machine Name: ": "TAYTAY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33610100",
+			"Machine Name: ": "VASRA - VISAYAS AVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36160100",
+			"Machine Name: ": "SAN AGUSTIN - HV DELA COSTA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32390100",
+			"Machine Name: ": "DAVAO - BAJADA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33470100",
+			"Machine Name: ": "SIKATUNA VILLAGE - ANONAS BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33810100",
+			"Machine Name: ": "TAGUIG - PUREGOLD BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35030100",
+			"Machine Name: ": "C3 - A MABINI BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36550100",
+			"Machine Name: ": "BAIS CITY NEGROS ORIENTAL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35460100",
+			"Machine Name: ": "BACOLOD NORTH DRIVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36470100",
+			"Machine Name: ": "LAS PIÑAS - BF RESORT  BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31660100",
+			"Machine Name: ": "CORINTHIAN PLAZA - MAKATI BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35370100",
+			"Machine Name: ": "FORT - MCKINLEY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36060100",
+			"Machine Name: ": "WEST SERVICE ROAD - MERVILLE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "35930100",
+			"Machine Name: ": "DAVAO ORIENTAL - MATI BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34230100",
+			"Machine Name: ": "ORTIGAS - ROCKWELL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33190100",
+			"Machine Name: ": "FORT - SOUTH OF MARKET BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36130100",
+			"Machine Name: ": "GREENBELT BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32620100",
+			"Machine Name: ": "LAGRO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33300100",
+			"Machine Name: ": "CEBU - CAPITOL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30290100",
+			"Machine Name: ": "MARULAS - VALENZUELA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37980100",
+			"Machine Name: ": "DAVAO - LANANG BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37080100",
+			"Machine Name: ": "ROXAS BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31940100",
+			"Machine Name: ": "PATEROS BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33480100",
+			"Machine Name: ": "SORSOGON BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33790100",
+			"Machine Name: ": "CALAMBA - PARIAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36790100",
+			"Machine Name: ": "GREENHILLS - V - MALL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31560100",
+			"Machine Name: ": "STA MARIA - BULACAN BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30310100",
+			"Machine Name: ": "PASEO - MAKATI AVE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33840100",
+			"Machine Name: ": "CEBU - TOLEDO BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "37630100",
+			"Machine Name: ": "VALENZUELA - NLEX GATEWAY BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "32220100",
+			"Machine Name: ": "LA TRINIDAD - BENGUET BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33170100",
+			"Machine Name: ": "GENERAL SANTOS - MAKAR  BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30400100",
+			"Machine Name: ": "DAVAO - TORIL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33580100",
+			"Machine Name: ": "DAVAO - MATINA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "36990100",
+			"Machine Name: ": "FORT - GRAND HYATT BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33540100",
+			"Machine Name: ": "GENERAL TRIAS - CAVITE BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "34420100",
+			"Machine Name: ": "MAKATI - ROCKWELL CENTER CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30420100",
+			"Machine Name: ": "LAS PIÑAS - ALABANG ZAPOTE ROAD BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "33350100",
+			"Machine Name: ": "BATANGAS - TANAUAN JP LAUREL BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31370100",
+			"Machine Name: ": "GUMACA BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "30800100",
+			"Machine Name: ": "PASIG - MABINI BRANCH CAM",
+			"Machine Type: ": "CAM"
+		},
+		{
+			"id": null,
+			"id: ": "31290100",
+			"Machine Name: ": "DIGOS BRANCH CAM",
+			"Machine Type: ": "CAM"
+		}
+	]
+}
