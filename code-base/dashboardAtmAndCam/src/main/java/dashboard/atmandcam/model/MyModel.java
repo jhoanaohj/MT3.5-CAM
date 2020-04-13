@@ -9,7 +9,6 @@ import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 
 
 @SqlResultSetMapping(name = "queryResult", classes = {
@@ -34,7 +33,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 			)
 })
 @Entity
-@JsonRootName(value = "userModel")
 public class MyModel {
 	
 	@Id
