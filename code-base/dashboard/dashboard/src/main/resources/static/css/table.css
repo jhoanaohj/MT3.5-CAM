@@ -1,132 +1,152 @@
 @charset "ISO-8859-1";
 
-@font-face {
-    font-family: OpenSans-Regular;
-    src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
-  }
-  
-  /* ---------------------------------------------------
+/* ---------------------------------------------------
     TABLE STYLE
 ----------------------------------------------------- */
-  
-  .limiter {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .wrap-table100 {
-    width: 1170px;
-    margin-left:auto; 
-    margin-right:auto;
-  }
-  
-  table {
-    border-spacing: 1;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
+.limiter {
+	width: 100%;
+	margin: 0 auto;
+}
 
-  table * {
-    position: relative;
-  }
-  table td, table th {
-    padding-left: 8px;
-  }
-  table thead tr {
-    height: 60px;
-    background: #36304a;
-  }
-  table tbody tr {
-    height: 50px;
-  }
-  table tbody tr:last-child {
-    border: 0;
-  }
-  table td, table th {
-    text-align: left;
-  }
-  
-  
-  .table100-head th{
-    font-family: OpenSans-Regular;
-    font-size: 18px;
-    color: #fff;
-    line-height: 1.2;
-    font-weight: unset;
-  }
-  
-  tbody tr {
-    font-family: OpenSans-Regular;
-    font-size: 15px;
-    color: #808080;
-    line-height: 1.2;
-    font-weight: unset;
-  }
-  
-  tbody tr:hover {
-    color: #555555;
-    background-color: #f5f5f5;
-    cursor: pointer;
-  }
-  
-  .th {
-    width: 100px;  
-  }
+.wrap-table100 {
+	width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-  /* ---------------------------------------------------
+table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 10px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+table * {
+	position: relative;
+}
+
+table td, table th {
+	padding-left: 8px;
+}
+
+table thead tr {
+	height: 60px;
+	background: #36304a;
+}
+
+table tbody tr {
+	height: 50px;
+}
+
+table tbody tr:last-child {
+	border: 0;
+}
+
+table td, table th {
+	text-align: left;
+}
+
+.table100-head th {
+	font-family: OpenSans-Regular;
+	font-size: 18px;
+	color: #fff;
+	line-height: 1.2;
+	font-weight: unset;
+}
+
+tbody tr {
+	font-family: OpenSans-Regular;
+	font-size: 15px;
+	color: #808080;
+	line-height: 1.2;
+	font-weight: unset;
+}
+
+tbody tr:hover {
+	color: #555555;
+	background-color: #f5f5f5;
+	cursor: pointer;
+}
+
+.th {
+	width: 100px;
+}
+
+button, html5 {
+	-webkit-appearance: button;
+	cursor: pointer;
+	width: 150px;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	width: 100px;
+}
+
+/* ---------------------------------------------------
     MODAL STYLE
 ----------------------------------------------------- */
+.tabme {
+	display: none;
+	margin-top: 10px;
+    height: 370px;
+}
 
-  .tabme {
-      display: none;
-      margin-top: 20px;
-      height: 350px;
-  }
+.tabb {
+	position: relative;
+	left: -25px;
+	list-style-type: none;
+}
 
-  .tabb {
-      position: relative;
-      left: -25px;
-  }
+.tabbs {
+	background-color: red;
+}
+.tabs {
+	list-style-type: none;
+	cursor: pointer;
+	float: left;
+	padding: 10px;
+	margin: 1px;
+	background-color: #5eade7;
+	color: white;
+	border-radius: 5px;
+	width: 100px;
+	text-align: center;
+	user-select: none;
+	-moz-user-select: none;
+}
 
-  .tabs {
-      list-style-type: none;
-      cursor: pointer;
-      float: left;
-      padding: 10px;
-      margin: 1px;
-      background-color:	#5eade7;
-      color: white;
-      border-radius: 5px;
-      width: 100px;
-      text-align: center;
-      user-select: none;
-      -moz-user-select: none;
-  }
+.tabs:hover {
+	transform: scale(1.05);
+	background-color: #3688ce;
+	transition: 0.3s;
+}
 
-  .tabs:hover {
-      transform: scale(1.05);
-      background-color: #3688ce;
-      transition: 0.3s;
-  }
+.selected {		
+		transform: scale(1.05);
+		background-color: #3688ce;
+		transition: 0.3s;
+	}
 
-  .btn-info {
-      height: 25px;
-      font-size: 12px;
-      padding: 4px 10px;
-      text-align: center;
-      display: inline;
-  }
-  
-  #profileModal {
-    height: 700px !important;
- 	width: 700px;
-  }
+.btn-info {
+	height: 25px;
+	font-size: 12px;
+	padding: 4px 10px;
+	text-align: center;
+	display: inline;
+}
 
-  thead {
+#profileModal {
+	height: 700px !important;
+	width: 700px;
+}
+
+thead {
 	color: white;
 }
-  
+

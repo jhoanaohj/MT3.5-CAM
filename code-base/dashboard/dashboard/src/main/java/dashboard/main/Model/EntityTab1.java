@@ -9,46 +9,59 @@ import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@SqlResultSetMapping(name = "queryResult", classes = {
-		@ConstructorResult(targetClass = dashboard.main.Model.EntityInventory.class, columns = {
+@SqlResultSetMapping(name = "queryTab1", classes = {
+		@ConstructorResult(targetClass = dashboard.main.Model.EntityTab1.class, columns = {
 				@ColumnResult(name = "terminal_id", type = String.class),
 				@ColumnResult(name = "machine_name", type = String.class),
-				@ColumnResult(name = "machine_type", type = String.class),
+				@ColumnResult(name = "rc_code", type = String.class),
 				@ColumnResult(name = "handled_by", type = String.class),
-				@ColumnResult(name = "vendor", type = String.class), 
+				@ColumnResult(name = "model", type = String.class), 
+				@ColumnResult(name = "os", type = String.class),
+				@ColumnResult(name = "vendor", type = String.class),
+				@ColumnResult(name = "serial_number", type = String.class),
 				@ColumnResult(name = "area", type = String.class),
-				@ColumnResult(name = "onsite", type = String.class),
-				@ColumnResult(name = "address", type = String.class),
-				@ColumnResult(name = "status", type = String.class)
+				@ColumnResult(name = "onsite", type = String.class)
 
 		}) })
 @NamedNativeQueries({
-		@NamedNativeQuery(name = "QueryAllData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory  WHERE machine_type = 'CAM'", resultSetMapping = "queryResult"),
-//		@NamedNativeQuery(name = "QuerySpecificData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory  WHERE terminal_id = ?1", resultSetMapping = "queryResult")
-
+		@NamedNativeQuery(name = "GetQueryTab1.getData", 
+				  query = "SELECT terminal_id, machine_name, rc_code, handled_by, model, os, vendor, serial_number, area, onsite FROM tbl_inventory  WHERE machine_type = 'CAM'", 
+				  resultSetMapping = "queryTab1"),
 })
 @Entity
-public class EntityInventory {
+public class EntityTab1 {
 	@Id
 	@JsonProperty("TerminalId")
 	private String terminalId;
+	
 	@JsonProperty("MachineName")
 	private String machineName;
-	@JsonProperty("MachineType")
-	private String machineType;
+	
+	@JsonProperty("RCCode")
+	private String rcCode;
+	
 	@JsonProperty("HandledBy")
 	private String handledBy;
+	
+	@JsonProperty("Model")
+	private String model;
+	
+	@JsonProperty("OS")
+	private String os;
+	
 	@JsonProperty("Vendor")
 	private String vendor;
+	
+	@JsonProperty("SerialNumber")
+	private String serialNum;
+	
 	@JsonProperty("Area")
 	private String area;
+	
 	@JsonProperty("OnSite")
 	private String onsite;
-	@JsonProperty("Address")
-	private String address;
-	@JsonProperty("Status")
-	private String status;
-	
+
+
 	public String getTerminalId() {
 		return terminalId;
 	}
@@ -65,14 +78,14 @@ public class EntityInventory {
 		this.machineName = machineName;
 	}
 
-	public String getMachineType() {
-		return machineType;
+	public String getRcCode() {
+		return rcCode;
 	}
 
-	public void setMachineType(String machineType) {
-		this.machineType = machineType;
+	public void setRcCode(String rcCode) {
+		this.rcCode = rcCode;
 	}
-	
+
 	public String getHandledBy() {
 		return handledBy;
 	}
@@ -80,13 +93,37 @@ public class EntityInventory {
 	public void setHandledBy(String handledBy) {
 		this.handledBy = handledBy;
 	}
-	
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+
 	public String getVendor() {
 		return vendor;
 	}
 
 	public void setVendor(String vendor) {
 		this.vendor = vendor;
+	}
+
+	public String getSerialNum() {
+		return serialNum;
+	}
+
+	public void setSerialNum(String serialNum) {
+		this.serialNum = serialNum;
 	}
 
 	public String getArea() {
@@ -105,37 +142,22 @@ public class EntityInventory {
 		this.onsite = onsite;
 	}
 
-	public String getAddress() {
-		return address;
-	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-
-	public EntityInventory(String termId, String machiName, String machiType,  String handBy, String vend, String are, String Site, String Add, String Stat) {
+	public EntityTab1(String termId, String machiName, String rcCode,  String handBy, String mode, String oS, String vend, String serial, String are, String Site) {
 		super();
 		this.terminalId = termId;
 		this.machineName = machiName;
-		this.machineType = machiType;
+		this.rcCode = rcCode;
 		this.handledBy = handBy;
+		this.model = mode;
+		this.os = oS;
 		this.vendor = vend;
+		this.serialNum = serial;
 		this.area = are;
 		this.onsite = Site;
-		this.address = Add;
-		this.status = Stat;
 		
 	}
 
-	public EntityInventory() {
+	public EntityTab1() {
 	}
 }
