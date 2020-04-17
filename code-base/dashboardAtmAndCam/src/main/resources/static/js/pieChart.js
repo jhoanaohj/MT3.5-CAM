@@ -15,7 +15,7 @@ const pieContainer = d3.select("#pieChart")
 //create group element to hold pie chart
 
 var g = pieContainer.append("g")
-.attr("transform", "translate(" + 170 + "," + radius + ")");
+.attr("transform", "translate(" + 250 + "," + radius + ")");
 
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -36,11 +36,19 @@ arc.append("path")
 .attr("d", path)
 .attr("fill", function(d){
     return color(d.data.percentage);
-});
+})
+.append("text")
+.text("afdaf");
 
 var label = d3.arc()
 .outerRadius(radius)
-.innerRadius(0)
-.text(function(d){
-    return d;
-});
+.innerRadius(0);
+
+arc.append("text")
+    .attr("transform", (d) => {
+        return "translate(" + label.centroid(d) + ")";
+    })
+    .attr("text-anchor", "middle")
+    .text((d) =>{
+        return d.data.platform + ":" + d.data.percentage + "%"
+    });

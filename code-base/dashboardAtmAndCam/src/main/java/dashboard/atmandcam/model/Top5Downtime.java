@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 			name = "GetTop5Downtime.getData",
 			query = "SELECT event_description, COUNT(*) AS error_count FROM dashboard.event WHERE terminal_id IN(\r\n" + 
 					"	SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM'\r\n" + 
-					") GROUP by event_description ORDER by error_count DESC",
+					") GROUP by event_description ORDER by error_count DESC LIMIT 5",
 			resultSetMapping = "top5Result"
 			)
 })

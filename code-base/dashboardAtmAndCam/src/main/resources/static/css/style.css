@@ -269,3 +269,7 @@ body {
 #pieChart svg {
     overflow: visible;
 }
+
+.content-header{
+    padding-bottom: 2em;
+}
