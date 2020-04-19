@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Tab</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" src="js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Tab</h1>
+
+		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+			
+			<div class="form-group">
+				<label for="title">Terminal ID</label> <input type="text" class="form-control" id="title" th:field="${tab.terminalId}" />
+				<label for="title">Machine Name</label> <input type="text" class="form-control" id="title" th:field="${tab.machineName}" />
+				<label for="title">Machine Type</label> <input type="text" class="form-control" id="title" th:field="${tab.machineType}"/>
+				<label for="title">RC Code</label> <input type="text" class="form-control" id="title" th:field="${tab.rcCode}" />
+				<label for="title">Handled By</label> <input type="text" class="form-control" id="title" th:field="${tab.handledBy}" />
+				<label for="title">Model</label> <input type="text" class="form-control" id="title" th:field="${tab.model}" />
+				<label for="title">OS</label> <input type="text" class="form-control" id="title" th:field="${tab.os}" />
+				<label for="title">Vendor</label> <input type="text" class="form-control" id="title" th:field="${tab.vendor}" />
+				<label for="title">Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.serialNumber}" />
+				<label for="title">Status</label> <input type="text" class="form-control" id="title" th:field="${tab.status}" />
+				<label for="title">Area</label> <input type="text" class="form-control" id="title" th:field="${tab.area}" />
+				<label for="title">Site Class</label> <input type="text" class="form-control" id="title" th:field="${tab.onsite}" />
+				<label for="title">Memory</label> <input type="text" class="form-control" id="title" th:field="${tab.memory}"/>
+				<label for="title">RFID</label> <input type="text" class="form-control" id="title" th:field="${tab.rfid}"/>
+			</div>
+
+	
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="#" th:href="@{/inventory}" class="btn btn-danger" role="button">Cancel</a>
+		</form>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Tab</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" src="js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Tab</h1>
+
+		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+			
+			<div class="form-group">
+				<label for="title">UPS Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.upsSerialNumber}" />
+				<label for="title">UPS Bar Code</label> <input type="text" class="form-control" id="title" th:field="${tab.upsBarCode}" />
+				<label for="title">UPS Delivery Date</label> <input type="text" class="form-control" id="title" th:field="${tab.upsDeliveryDate}"/>
+				<label for="title">UPS PO Number</label> <input type="text" class="form-control" id="title" th:field="${tab.upsPONumber}" />
+				<label for="title">UPS Installation Date</label> <input type="text" class="form-control" id="title" th:field="${tab.upsInstallationDate}" />
+				<label for="title">UPS Warranty Start</label> <input type="text" class="form-control" id="title" th:field="${tab.upsWarrantyStart}" />
+				<label for="title">UPS Warranty End</label> <input type="text" class="form-control" id="title" th:field="${tab.upsWarrantyEnd}" />
+				<label for="title">UPS Vendor</label> <input type="text" class="form-control" id="title" th:field="${tab.upsVendor}" />
+				<label for="title">UPS Brand</label> <input type="text" class="form-control" id="title" th:field="${tab.upsBrand}" />
+				<label for="title">UPS Model</label> <input type="text" class="form-control" id="title" th:field="${tab.upsModel}" />
+				<label for="title">UPS Capacity</label> <input type="text" class="form-control" id="title" th:field="${tab.upsCapacity}" />
+
+			</div>
+
+	
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="#" th:href="@{/inventory}" class="btn btn-danger" role="button">Cancel</a>
+		</form>
+
+	</div>
+
+</body>
+</html>

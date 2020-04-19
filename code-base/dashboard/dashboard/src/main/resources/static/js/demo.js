@@ -40,7 +40,7 @@ $(document).ready(
 										{'data': 'OnSite'},
 										{'data': 'Address'},
 										{'data': 'Status'},
-										{'defaultContent': '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">From Ajax</button>'}]
+										{'defaultContent': '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="ModalButton" >From Ajax</button>'}]
 								})
 
 					}

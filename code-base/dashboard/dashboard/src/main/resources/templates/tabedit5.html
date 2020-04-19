@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Tab</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" src="js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Tab</h1>
+
+		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+			
+			<div class="form-group">
+				<label for="title">Encrypting Pin Pad</label> <input type="text" class="form-control" id="title" th:field="${tab.encryptingPad}" />
+				<label for="title">EPP Model</label> <input type="text" class="form-control" id="title" th:field="${tab.eppModel}" />
+				<label for="title">EPP Hardware Version Number</label> <input type="text" class="form-control" id="title" th:field="${tab.eppHardwareNumber}" />
+				<label for="title">EPP Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.eppFirmware}" />
+				<label for="title">Loader Version of EPP Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.loaderVersionEPPFirmware}" />
+				<label for="title">PCI PTS Standard</label> <input type="text" class="form-control" id="title" th:field="${tab.pciptsStandard}" />
+				<label for="title">PCI PTS Approval Number</label> <input type="text" class="form-control" id="title" th:field="${tab.pciptsApprovalNumber}" />
+				<label for="title">PCI Certificate Expiry Date</label> <input type="text" class="form-control" id="title" th:field="${tab.pciCertificateExpiryDate}" />
+				<label for="title">PCI PTS Product Type</label> <input type="text" class="form-control" id="title" th:field="${tab.pciptsProductType}" />
+			</div>
+
+	
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="#" th:href="@{/inventory}" class="btn btn-danger" role="button">Cancel</a>
+		</form>
+
+	</div>
+
+</body>
+</html>

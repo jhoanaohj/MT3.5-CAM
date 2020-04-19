@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Tab</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" src="js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Tab</h1>
+
+		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+			
+			<div class="form-group">
+				<label for="title">C Software Build</label> <input type="text" class="form-control" id="title" th:field="${tab.cSoftwareBuild}" />
+				<label for="title">C Encrypting Pin Pad Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.cEncryptingPinPadFirmware}" />
+				<label for="title">C Encrypting Pin Pad Firmware Type</label> <input type="text" class="form-control" id="title" th:field="${tab.cEncryptingPinPadFirmwareType}"/>
+				<label for="title">C Encrypting Pin Pad Firmware Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.cEncryptingPinPadFirmwareSerialNumber}" />
+				<label for="title">C Encrypting Pin Pad</label> <input type="text" class="form-control" id="title" th:field="${tab.cEncryptingPinPad}" />
+				<label for="title">C Remote Status Monitor</label> <input type="text" class="form-control" id="title" th:field="${tab.cRemoteStatusMonitor" />
+				<label for="title">C CCTV</label> <input type="text" class="form-control" id="title" th:field="${tab.cctv}" />
+				<label for="title">C Standard Metal Pin Shield</label> <input type="text" class="form-control" id="title" th:field="${tab.cStandardMetalPinShield}" />
+				<label for="title">C TMD Security Device</label> <input type="text" class="form-control" id="title" th:field="${tab.cTMDSecurityDevice}" />
+				<label for="title">C Solidcore</label> <input type="text" class="form-control" id="title" th:field="${tab.cSolidcore}" />
+				<label for="title">C Bolting</label> <input type="text" class="form-control" id="title" th:field="${tab.cBolting}" />
+				<label for="title">C Topper Vestibule Key</label> <input type="text" class="form-control" id="title" th:field="${tab.cTopperVestibuleKey}" />
+
+			</div>
+
+	
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="#" th:href="@{/inventory}" class="btn btn-danger" role="button">Cancel</a>
+		</form>
+
+	</div>
+
+</body>
+</html>

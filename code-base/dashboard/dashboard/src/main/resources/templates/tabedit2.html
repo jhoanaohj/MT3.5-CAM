@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Tab</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" src="js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Tab</h1>
+
+		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+			
+			<div class="form-group">
+				<label for="title">Operation Start</label> <input type="text" class="form-control" id="title" th:field="${tab.operationStart}" />
+				<label for="title">Operation End</label> <input type="text" class="form-control" id="title" th:field="${tab.operationEnd}" />
+				<label for="title">Create Date</label> <input type="text" class="form-control" id="title" th:field="${tab.createDate}" />
+				<label for="title">Update Date</label> <input type="text" class="form-control" id="title" th:field="${tab.updateDate}" />
+				<label for="title">Address</label> <input type="text" class="form-control" id="title" th:field="${tab.add}" />
+				<label for="title">Region ISO Code</label> <input type="text" class="form-control" id="title" th:field="${tab.regionCode}" />
+				<label for="title">Province ISO Code</label> <input type="text" class="form-control" id="title" th:field="${tab.provinceCode}" />
+				<label for="title">Rating</label> <input type="text" class="form-control" id="title" th:field="${tab.rate}" />
+				<label for="title">Stand Alone Branch</label> <input type="text" class="form-control" id="title" th:field="${tab.stand}" />
+				<label for="title">PO Number</label> <input type="text" class="form-control" id="title" th:field="${tab.poNum}" />
+			</div>
+
+	
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="#" th:href="@{/inventory}" class="btn btn-danger" role="button">Cancel</a>
+		</form>
+
+	</div>
+
+</body>
+</html>

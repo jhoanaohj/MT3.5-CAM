@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Tab</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" src="js/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Tab</h1>
+
+		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+			
+			<div class="form-group">
+				<label for="title">Original Location</label> <input type="text" class="form-control" id="title" th:field="${tab.originalLocation}" />
+				<label for="title">Warranty Begin</label> <input type="text" class="form-control" id="title" th:field="${tab.warrantyBegin}" />
+				<label for="title">Warranty End</label> <input type="text" class="form-control" id="title" th:field="${tab.warrantyEnd}" />
+				<label for="title">Service Provider</label> <input type="text" class="form-control" id="title" th:field="${tab.serviceProvider}" />
+				<label for="title">Battery Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.batterySerialNumber}" />
+				<label for="title">Battery Delivery Date</label> <input type="text" class="form-control" id="title" th:field="${tab.batteryDeliveryDate}" />
+				<label for="title">Battery Installation Date</label> <input type="text" class="form-control" id="title" th:field="${tab.batteryInstallationDate}" />
+				<label for="title">Battery Capacity</label> <input type="text" class="form-control" id="title" th:field="${tab.batteryCapacity}" />
+				<label for="title">BU UPS Connected To Branch</label> <input type="text" class="form-control" id="title" th:field="${tab.buConnectedBranch}" />
+				<label for="title">BU UPS Stand Alone</label> <input type="text" class="form-control" id="title" th:field="${tab.buStandAlone}" />
+				<label for="title">BU UPS Brand</label> <input type="text" class="form-control" id="title" th:field="${tab.buBrand}" />
+				<label for="title">BU UPS Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.buSerialNumber}" />
+				<label for="title">BU UPS Bar Code</label> <input type="text" class="form-control" id="title" th:field="${tab.buBarCode}" />
+			</div>
+
+	
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="#" th:href="@{/inventory}" class="btn btn-danger" role="button">Cancel</a>
+		</form>
+
+	</div>
+
+</body>
+</html>
