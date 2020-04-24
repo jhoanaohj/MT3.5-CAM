@@ -16,15 +16,16 @@
 		<h1>Tab</h1>
 
 		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+		<input th:type="hidden" name="id" th:field="${tab.terminalId}" />
 			
 			<div class="form-group">
 				<label for="title">Acquisition Date</label> <input type="text" class="form-control" id="title" th:field="${tab.acquisitionDate}" />
 				<label for="title">Operational Date</label> <input type="text" class="form-control" id="title" th:field="${tab.operationalDate}" />
 				<label for="title">Delivery Date</label> <input type="text" class="form-control" id="title" th:field="${tab.deliveryDate}" />
 				<label for="title">Installation Date</label> <input type="text" class="form-control" id="title" th:field="${tab.installationDate}" />
-				<label for="title">Date Pulled Out</label> <input type="text" class="form-control" id="title" th:field="${tab.datePulled}" />
-				<label for="title">Reason For Pull Out</label> <input type="text" class="form-control" id="title" th:field="${tab.reasonPulled}" />
-				<label for="title">Location After Pull Out</label> <input type="text" class="form-control" id="title" th:field="${tab.locationPulled}" />
+				<label for="title">Date Pulled Out</label> <input type="text" class="form-control" id="title" th:field="${tab.date_pulled_out}" />
+				<label for="title">Reason For Pull Out</label> <input type="text" class="form-control" id="title" th:field="${tab.reason_for_pull_out}" />
+				<label for="title">Location After Pull Out</label> <input type="text" class="form-control" id="title" th:field="${tab.location_after_pull_out}" />
 			</div>
 
 	

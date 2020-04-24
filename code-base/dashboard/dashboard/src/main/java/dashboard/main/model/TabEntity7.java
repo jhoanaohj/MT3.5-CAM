@@ -9,6 +9,8 @@ import javax.persistence.*;
 public class TabEntity7 {
 
 	@Id
+	private String terminalId;
+	@Column
 	private Boolean esdmsInstalled;
 	@Column
 	private Date esdmsDate;
@@ -19,7 +21,16 @@ public class TabEntity7 {
 	@Column
 	private Boolean tmdInstalled;
 	@Column
-	private Date tmdDate;
+	private Date tmdDate; 
+
+
+	public String getTerminalId() {
+		return terminalId;
+	}
+
+	public void setTerminalId(String terminalId) {
+		this.terminalId = terminalId;
+	}
 
 	public Boolean getEsdmsInstalled() {
 		return esdmsInstalled;
@@ -69,8 +80,9 @@ public class TabEntity7 {
 		this.tmdDate = tmdDate;
 	}
 
-	public TabEntity7(Boolean esdmsInstall, Date esdmsDte, Boolean cppInstall, Date cppDte, Boolean tmdInstall, Date tmdDte) {
+	public TabEntity7(String termId, Boolean esdmsInstall, Date esdmsDte, Boolean cppInstall, Date cppDte, Boolean tmdInstall, Date tmdDte) {
 		super();
+		this.terminalId = termId;
 		this.esdmsInstalled = esdmsInstall;
 		this.esdmsDate = esdmsDte;
 		this.cppInstalled = cppInstall;

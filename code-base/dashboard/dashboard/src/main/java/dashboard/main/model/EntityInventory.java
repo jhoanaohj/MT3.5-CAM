@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 		}) })
 @NamedNativeQueries({
-		@NamedNativeQuery(name = "QueryAllData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory  WHERE machine_type = 'CAM'", resultSetMapping = "queryResult"),
+		@NamedNativeQuery(name = "QueryAllData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory WHERE machine_type = 'CAM  '", resultSetMapping = "queryResult"),
 //		@NamedNativeQuery(name = "QuerySpecificData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory  WHERE terminal_id = ?1", resultSetMapping = "queryResult")
 
 })

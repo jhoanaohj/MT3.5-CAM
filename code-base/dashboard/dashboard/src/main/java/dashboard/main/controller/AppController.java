@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import dashboard.main.model.EntityInventory;
 //import dashboard.main.model.EntityTab1;
 import dashboard.main.repository.RepositoryInventory;
-//import dashboard.main.repository.RepositoryTab1;
+
 
 @Controller
 public class AppController {

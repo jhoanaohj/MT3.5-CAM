@@ -16,18 +16,19 @@
 		<h1>Tab</h1>
 
 		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+		<input th:type="hidden" name="id" th:field="${tab.terminalId}" />
 			
 			<div class="form-group">
 				<label for="title">Operation Start</label> <input type="text" class="form-control" id="title" th:field="${tab.operationStart}" />
 				<label for="title">Operation End</label> <input type="text" class="form-control" id="title" th:field="${tab.operationEnd}" />
 				<label for="title">Create Date</label> <input type="text" class="form-control" id="title" th:field="${tab.createDate}" />
 				<label for="title">Update Date</label> <input type="text" class="form-control" id="title" th:field="${tab.updateDate}" />
-				<label for="title">Address</label> <input type="text" class="form-control" id="title" th:field="${tab.add}" />
-				<label for="title">Region ISO Code</label> <input type="text" class="form-control" id="title" th:field="${tab.regionCode}" />
-				<label for="title">Province ISO Code</label> <input type="text" class="form-control" id="title" th:field="${tab.provinceCode}" />
-				<label for="title">Rating</label> <input type="text" class="form-control" id="title" th:field="${tab.rate}" />
-				<label for="title">Stand Alone Branch</label> <input type="text" class="form-control" id="title" th:field="${tab.stand}" />
-				<label for="title">PO Number</label> <input type="text" class="form-control" id="title" th:field="${tab.poNum}" />
+				<label for="title">Address</label> <input type="text" class="form-control" id="title" th:field="${tab.address}" />
+				<label for="title">Region ISO Code</label> <input type="text" class="form-control" id="title" th:field="${tab.region_iso_code}" />
+				<label for="title">Province ISO Code</label> <input type="text" class="form-control" id="title" th:field="${tab.province_iso_code}" />
+				<label for="title">Rating</label> <input type="text" class="form-control" id="title" th:field="${tab.rating}" />
+				<label for="title">Stand Alone Branch</label> <input type="text" class="form-control" id="title" th:field="${tab.stand_alone_branch}" />
+				<label for="title">PO Number</label> <input type="text" class="form-control" id="title" th:field="${tab.poNumber}" />
 			</div>
 
 	

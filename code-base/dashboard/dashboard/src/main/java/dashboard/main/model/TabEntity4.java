@@ -9,97 +9,109 @@ import javax.persistence.*;
 public class TabEntity4 {
 
 	@Id
-	private Date maEffect;
+	private String terminalId;
 	@Column
-	private Date maService;
+	private String maServiceProvider;
 	@Column
-	private Integer asset;
+	private Date ma_effective_date;
 	@Column
-	private String softwareVersion; 
+	private Integer asset_code;
 	@Column
-	private String ueppLoader;
+	private String software_build_version; 
 	@Column
-	private String ueppFirmware;
+	private String uepp_loader_version;
 	@Column
-	private String ueppSN;
+	private String uepp_firmware_version;
 	@Column
-	private Boolean tmdSecurity;
+	private String uepp_sn;
+	@Column
+	private Boolean tmd_security_device;	
 
-	public Date getMaEffect() {
-		return maEffect;
+
+	public String getTerminalId() {
+		return terminalId;
 	}
 
-	public void setMaEffect(Date maEffect) {
-		this.maEffect = maEffect;
+	public void setTerminalId(String terminalId) {
+		this.terminalId = terminalId;
 	}
 
-	public Date getMaService() {
-		return maService;
+	public String getMaServiceProvider() {
+		return maServiceProvider;
 	}
 
-	public void setMaService(Date maService) {
-		this.maService = maService;
+	public void setMaServiceProvider(String maServiceProvider) {
+		this.maServiceProvider = maServiceProvider;
 	}
 
-	public Integer getAsset() {
-		return asset;
+	public Date getMa_effective_date() {
+		return ma_effective_date;
 	}
 
-	public void setAsset(Integer asset) {
-		this.asset = asset;
+	public void setMa_effective_date(Date ma_effective_date) {
+		this.ma_effective_date = ma_effective_date;
 	}
 
-	public String getSoftwareVersion() {
-		return softwareVersion;
+	public Integer getAsset_code() {
+		return asset_code;
 	}
 
-	public void setSoftwareVersion(String softwareVersion) {
-		this.softwareVersion = softwareVersion;
+	public void setAsset_code(Integer asset_code) {
+		this.asset_code = asset_code;
 	}
 
-	public String getUeppLoader() {
-		return ueppLoader;
+	public String getSoftware_build_version() {
+		return software_build_version;
 	}
 
-	public void setUeppLoader(String ueppLoader) {
-		this.ueppLoader = ueppLoader;
+	public void setSoftware_build_version(String software_build_version) {
+		this.software_build_version = software_build_version;
 	}
 
-	public String getUeppFirmware() {
-		return ueppFirmware;
+	public String getUepp_loader_version() {
+		return uepp_loader_version;
 	}
 
-	public void setUeppFirmware(String ueppFirmware) {
-		this.ueppFirmware = ueppFirmware;
+	public void setUepp_loader_version(String uepp_loader_version) {
+		this.uepp_loader_version = uepp_loader_version;
 	}
 
-	public String getUeppSN() {
-		return ueppSN;
+	public String getUepp_firmware_version() {
+		return uepp_firmware_version;
 	}
 
-	public void setUeppSN(String ueppSN) {
-		this.ueppSN = ueppSN;
+	public void setUepp_firmware_version(String uepp_firmware_version) {
+		this.uepp_firmware_version = uepp_firmware_version;
 	}
 
-	public Boolean getTmdSecurity() {
-		return tmdSecurity;
+	public String getUepp_sn() {
+		return uepp_sn;
 	}
 
-	public void setTmdSecurity(Boolean tmdSecurity) {
-		this.tmdSecurity = tmdSecurity;
+	public void setUepp_sn(String uepp_sn) {
+		this.uepp_sn = uepp_sn;
 	}
 
-	public TabEntity4(Date maServe, Date maEff, Integer assetCode, String softwareVer, String loader, String firmware,
+	public Boolean getTmd_security_device() {
+		return tmd_security_device;
+	}
+
+	public void setTmd_security_device(Boolean tmd_security_device) {
+		this.tmd_security_device = tmd_security_device;
+	}
+
+	public TabEntity4(String termId, String maServe, Date maEff, Integer assetCode, String softwareVer, String loader, String firmware,
 			String sn, Boolean tmdSecu) {
 		super();
-		this.maService = maServe;
-		this.maEffect = maEff;
-		this.asset = assetCode;
-		this.softwareVersion = softwareVer;
-		this.ueppLoader = loader;
-		this.ueppFirmware = firmware;
-		this.ueppSN = sn;
-		this.tmdSecurity = tmdSecu;
+		this.terminalId = termId;
+		this.maServiceProvider = maServe;
+		this.ma_effective_date = maEff;
+		this.asset_code = assetCode;
+		this.software_build_version = softwareVer;
+		this.uepp_loader_version = loader;
+		this.uepp_firmware_version = firmware;
+		this.uepp_sn = sn;
+		this.tmd_security_device = tmdSecu;
 		
 	}
 

@@ -16,17 +16,18 @@
 		<h1>Tab</h1>
 
 		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+		<input th:type="hidden" name="id" th:field="${tab.terminalId}" />
 			
 			<div class="form-group">
-				<label for="title">Encrypting Pin Pad</label> <input type="text" class="form-control" id="title" th:field="${tab.encryptingPad}" />
+				<label for="title">Encrypting Pin Pad</label> <input type="text" class="form-control" id="title" th:field="${tab.encryptingPinPad}" />
 				<label for="title">EPP Model</label> <input type="text" class="form-control" id="title" th:field="${tab.eppModel}" />
-				<label for="title">EPP Hardware Version Number</label> <input type="text" class="form-control" id="title" th:field="${tab.eppHardwareNumber}" />
-				<label for="title">EPP Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.eppFirmware}" />
-				<label for="title">Loader Version of EPP Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.loaderVersionEPPFirmware}" />
-				<label for="title">PCI PTS Standard</label> <input type="text" class="form-control" id="title" th:field="${tab.pciptsStandard}" />
-				<label for="title">PCI PTS Approval Number</label> <input type="text" class="form-control" id="title" th:field="${tab.pciptsApprovalNumber}" />
-				<label for="title">PCI Certificate Expiry Date</label> <input type="text" class="form-control" id="title" th:field="${tab.pciCertificateExpiryDate}" />
-				<label for="title">PCI PTS Product Type</label> <input type="text" class="form-control" id="title" th:field="${tab.pciptsProductType}" />
+				<label for="title">EPP Hardware Version Number</label> <input type="text" class="form-control" id="title" th:field="${tab.eppHardwareVersionNumber}" />
+				<label for="title">EPP Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.encryptingPinPadFirmware}" />
+				<label for="title">Loader Version of EPP Firmware</label> <input type="text" class="form-control" id="title" th:field="${tab.loader_version_of_epp_firmware}" />
+				<label for="title">PCI PTS Standard</label> <input type="text" class="form-control" id="title" th:field="${tab.pci_pts_standard}" />
+				<label for="title">PCI PTS Approval Number</label> <input type="text" class="form-control" id="title" th:field="${tab.pci_pts_approval_number}" />
+				<label for="title">PCI Certificate Expiry Date</label> <input type="text" class="form-control" id="title" th:field="${tab.pci_certificate_expiry_date}" />
+				<label for="title">PCI PTS Product Type</label> <input type="text" class="form-control" id="title" th:field="${tab.pci_pts_product_type}" />
 			</div>
 
 	

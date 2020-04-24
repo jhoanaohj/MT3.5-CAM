@@ -16,6 +16,7 @@
 		<h1>Tab</h1>
 
 		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+		<input th:type="hidden" name="id" th:field="${tab.terminalId}" />
 			
 			<div class="form-group">
 				<label for="title">C Vestibule Signage</label> <input type="text" class="form-control" id="title" th:field="${tab.cTopperSignage}" />

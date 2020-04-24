@@ -9,31 +9,41 @@ import javax.persistence.*;
 public class TabEntity5 {
 
 	@Id
-	private Boolean encryptingPad;
+	private String terminalId;
+	@Column
+	private Boolean encryptingPinPad;
 	@Column
 	private String eppModel;
 	@Column
-	private String eppHardwareNumber;
+	private String eppHardwareVersionNumber;
 	@Column
-	private String eppFirmware; 
+	private String encryptingPinPadFirmware; 
 	@Column
-	private String loaderVersionEPPFirmware;
+	private String loader_version_of_epp_firmware;
 	@Column
-	private String pciptsStandard;
+	private String pci_pts_standard;
 	@Column
-	private String pciptsApprovalNumber;
+	private String pci_pts_approval_number;
 	@Column
-	private Date pciCertificateExpiryDate;
+	private Date pci_certificate_expiry_date;
 	@Column
-	private String pciptsProductType;
-	
+	private String pci_pts_product_type; 
 
-	public Boolean getEncryptingPad() {
-		return encryptingPad;
+
+	public String getTerminalId() {
+		return terminalId;
 	}
 
-	public void setEncryptingPad(Boolean encryptingPad) {
-		this.encryptingPad = encryptingPad;
+	public void setTerminalId(String terminalId) {
+		this.terminalId = terminalId;
+	}
+
+	public Boolean getEncryptingPinPad() {
+		return encryptingPinPad;
+	}
+
+	public void setEncryptingPinPad(Boolean encryptingPinPad) {
+		this.encryptingPinPad = encryptingPinPad;
 	}
 
 	public String getEppModel() {
@@ -44,74 +54,75 @@ public class TabEntity5 {
 		this.eppModel = eppModel;
 	}
 
-	public String getEppHardwareNumber() {
-		return eppHardwareNumber;
+	public String getEppHardwareVersionNumber() {
+		return eppHardwareVersionNumber;
 	}
 
-	public void setEppHardwareNumber(String eppHardwareNumber) {
-		this.eppHardwareNumber = eppHardwareNumber;
+	public void setEppHardwareVersionNumber(String eppHardwareVersionNumber) {
+		this.eppHardwareVersionNumber = eppHardwareVersionNumber;
 	}
 
-	public String getEppFirmware() {
-		return eppFirmware;
+	public String getEncryptingPinPadFirmware() {
+		return encryptingPinPadFirmware;
 	}
 
-	public void setEppFirmware(String eppFirmware) {
-		this.eppFirmware = eppFirmware;
+	public void setEncryptingPinPadFirmware(String encryptingPinPadFirmware) {
+		this.encryptingPinPadFirmware = encryptingPinPadFirmware;
 	}
 
-	public String getLoaderVersionEPPFirmware() {
-		return loaderVersionEPPFirmware;
+	public String getLoader_version_of_epp_firmware() {
+		return loader_version_of_epp_firmware;
 	}
 
-	public void setLoaderVersionEPPFirmware(String loaderVersionEPPFirmware) {
-		this.loaderVersionEPPFirmware = loaderVersionEPPFirmware;
+	public void setLoader_version_of_epp_firmware(String loader_version_of_epp_firmware) {
+		this.loader_version_of_epp_firmware = loader_version_of_epp_firmware;
 	}
 
-	public String getPciptsStandard() {
-		return pciptsStandard;
+	public String getPci_pts_standard() {
+		return pci_pts_standard;
 	}
 
-	public void setPciptsStandard(String pciptsStandard) {
-		this.pciptsStandard = pciptsStandard;
+	public void setPci_pts_standard(String pci_pts_standard) {
+		this.pci_pts_standard = pci_pts_standard;
 	}
 
-	public String getPciptsApprovalNumber() {
-		return pciptsApprovalNumber;
+	public String getPci_pts_approval_number() {
+		return pci_pts_approval_number;
 	}
 
-	public void setPciptsApprovalNumber(String pciptsApprovalNumber) {
-		this.pciptsApprovalNumber = pciptsApprovalNumber;
+	public void setPci_pts_approval_number(String pci_pts_approval_number) {
+		this.pci_pts_approval_number = pci_pts_approval_number;
 	}
 
-	public Date getPciCertificateExpiryDate() {
-		return pciCertificateExpiryDate;
+	public Date getPci_certificate_expiry_date() {
+		return pci_certificate_expiry_date;
 	}
 
-	public void setPciCertificateExpiryDate(Date pciCertificateExpiryDate) {
-		this.pciCertificateExpiryDate = pciCertificateExpiryDate;
+	public void setPci_certificate_expiry_date(Date pci_certificate_expiry_date) {
+		this.pci_certificate_expiry_date = pci_certificate_expiry_date;
 	}
 
-	public String getPciptsProductType() {
-		return pciptsProductType;
+	public String getPci_pts_product_type() {
+		return pci_pts_product_type;
 	}
 
-	public void setPciptsProductType(String pciptsProductType) {
-		this.pciptsProductType = pciptsProductType;
+	public void setPci_pts_product_type(String pci_pts_product_type) {
+		this.pci_pts_product_type = pci_pts_product_type;
 	}
 
-	public TabEntity5(Boolean encryptPad, String eppMode, String eppHardware, String eppFirm, String loader, String loaderVerEPP,
+	public TabEntity5(String termId, Boolean encryptPad, String eppMode, String eppHardware, String eppFirm, String loader, String loaderVerEPP,
 			String pciStandard, String pciApproval, Date pciCertificate, String pciProduct) {
 		super();
-		this.encryptingPad = encryptPad;
+		this.terminalId = termId;
+		this.encryptingPinPad = encryptPad;
 		this.eppModel = eppMode;
-		this.eppHardwareNumber = eppHardware;
-		this.eppFirmware = eppFirm;
-		this.loaderVersionEPPFirmware = loaderVerEPP;
-		this.pciptsStandard = pciStandard;
-		this.pciptsApprovalNumber = pciApproval;
-		this.pciCertificateExpiryDate = pciCertificate;
-		this.pciptsProductType = pciProduct;
+		this.eppHardwareVersionNumber = eppHardware;
+		this.encryptingPinPadFirmware = eppFirm;
+		this.loader_version_of_epp_firmware = loaderVerEPP;
+		this.pci_pts_standard = pciStandard;
+		this.pci_pts_approval_number = pciApproval;
+		this.pci_certificate_expiry_date = pciCertificate;
+		this.pci_pts_product_type = pciProduct;
 
 		
 	}

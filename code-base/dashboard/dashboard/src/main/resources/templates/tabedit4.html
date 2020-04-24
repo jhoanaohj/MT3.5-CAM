@@ -16,16 +16,17 @@
 		<h1>Tab</h1>
 
 		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+		<input th:type="hidden" name="id" th:field="${tab.terminalId}" />
 			
 			<div class="form-group">
-				<label for="title">MA Service Provider</label> <input type="text" class="form-control" id="title" th:field="${tab.maService}" />
-				<label for="title">MA Effective Date</label> <input type="text" class="form-control" id="title" th:field="${tab.maEffect}" />
-				<label for="title">Asset Code</label> <input type="text" class="form-control" id="title" th:field="${tab.asset}" />
-				<label for="title">Software Build Version</label> <input type="text" class="form-control" id="title" th:field="${tab.softwareVersion}" />
-				<label for="title">UEPP Loader Version</label> <input type="text" class="form-control" id="title" th:field="${tab.ueppLoader}" />
-				<label for="title">UEPP Firmware Version</label> <input type="text" class="form-control" id="title" th:field="${tab.ueppFirmware}" />
-				<label for="title">UEPP SN</label> <input type="text" class="form-control" id="title" th:field="${tab.ueppSN}" />
-				<label for="title">TMD Security Device</label> <input type="text" class="form-control" id="title" th:field="${tab.tmdSecurity}" />
+				<label for="title">MA Service Provider</label> <input type="text" class="form-control" id="title" th:field="${tab.maServiceProvider}" />
+				<label for="title">MA Effective Date</label> <input type="text" class="form-control" id="title" th:field="${tab.ma_effective_date}" />
+				<label for="title">Asset Code</label> <input type="text" class="form-control" id="title" th:field="${tab.asset_code}" />
+				<label for="title">Software Build Version</label> <input type="text" class="form-control" id="title" th:field="${tab.software_build_version}" />
+				<label for="title">UEPP Loader Version</label> <input type="text" class="form-control" id="title" th:field="${tab.uepp_loader_version}" />
+				<label for="title">UEPP Firmware Version</label> <input type="text" class="form-control" id="title" th:field="${tab.uepp_firmware_version}" />
+				<label for="title">UEPP SN</label> <input type="text" class="form-control" id="title" th:field="${tab.uepp_sn}" />
+				<label for="title">TMD Security Device</label> <input type="text" class="form-control" id="title" th:field="${tab.tmd_security_device}" />
 			</div>
 
 	

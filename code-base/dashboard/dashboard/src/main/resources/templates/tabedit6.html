@@ -16,6 +16,7 @@
 		<h1>Tab</h1>
 
 		<form class="form-group" action="/tab" th:action="@{/tab}" method="post">
+		<input th:type="hidden" name="id" th:field="${tab.terminalId}" />	
 			
 			<div class="form-group">
 				<label for="title">Original Location</label> <input type="text" class="form-control" id="title" th:field="${tab.originalLocation}" />
@@ -26,11 +27,11 @@
 				<label for="title">Battery Delivery Date</label> <input type="text" class="form-control" id="title" th:field="${tab.batteryDeliveryDate}" />
 				<label for="title">Battery Installation Date</label> <input type="text" class="form-control" id="title" th:field="${tab.batteryInstallationDate}" />
 				<label for="title">Battery Capacity</label> <input type="text" class="form-control" id="title" th:field="${tab.batteryCapacity}" />
-				<label for="title">BU UPS Connected To Branch</label> <input type="text" class="form-control" id="title" th:field="${tab.buConnectedBranch}" />
-				<label for="title">BU UPS Stand Alone</label> <input type="text" class="form-control" id="title" th:field="${tab.buStandAlone}" />
-				<label for="title">BU UPS Brand</label> <input type="text" class="form-control" id="title" th:field="${tab.buBrand}" />
-				<label for="title">BU UPS Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.buSerialNumber}" />
-				<label for="title">BU UPS Bar Code</label> <input type="text" class="form-control" id="title" th:field="${tab.buBarCode}" />
+				<label for="title">BU UPS Connected To Branch</label> <input type="text" class="form-control" id="title" th:field="${tab.bu_ups_connected_to_branch}" />
+				<label for="title">BU UPS Stand Alone</label> <input type="text" class="form-control" id="title" th:field="${tab.bu_ups_stand_alone}" />
+				<label for="title">BU UPS Brand</label> <input type="text" class="form-control" id="title" th:field="${tab.bu_ups_brand}" />
+				<label for="title">BU UPS Serial Number</label> <input type="text" class="form-control" id="title" th:field="${tab.bu_ups_serial_number}" />
+				<label for="title">BU UPS Bar Code</label> <input type="text" class="form-control" id="title" th:field="${tab.bu_ups_barcode}" />
 			</div>
 
 	

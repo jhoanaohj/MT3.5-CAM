@@ -9,6 +9,8 @@ import javax.persistence.*;
 public class TabEntity3 {
 
 	@Id
+	private String terminalId;
+	@Column
 	private Date acquisitionDate;
 	@Column
 	private Date operationalDate;
@@ -17,13 +19,21 @@ public class TabEntity3 {
 	@Column
 	private Date installationDate; //should change DATE if gonna be added
 	@Column
-	private Date datePulled;
+	private Date date_pulled_out;
 	@Column
-	private String reasonPulled;
+	private String reason_for_pull_out;
 	@Column
-	private String locationPulled;
+	private String location_after_pull_out;
 	
-	
+
+	public String getTerminalId() {
+		return terminalId;
+	}
+
+	public void setTerminalId(String terminalId) {
+		this.terminalId = terminalId;
+	}
+
 	public Date getAcquisitionDate() {
 		return acquisitionDate;
 	}
@@ -56,40 +66,41 @@ public class TabEntity3 {
 		this.installationDate = installationDate;
 	}
 
-	public Date getDatePulled() {
-		return datePulled;
+	public Date getDate_pulled_out() {
+		return date_pulled_out;
 	}
 
-	public void setDatePulled(Date datePulled) {
-		this.datePulled = datePulled;
+	public void setDate_pulled_out(Date date_pulled_out) {
+		this.date_pulled_out = date_pulled_out;
 	}
 
-	public String getReasonPulled() {
-		return reasonPulled;
+	public String getReason_for_pull_out() {
+		return reason_for_pull_out;
 	}
 
-	public void setReasonPulled(String reasonPulled) {
-		this.reasonPulled = reasonPulled;
+	public void setReason_for_pull_out(String reason_for_pull_out) {
+		this.reason_for_pull_out = reason_for_pull_out;
 	}
 
-	public String getLocationPulled() {
-		return locationPulled;
+	public String getLocation_after_pull_out() {
+		return location_after_pull_out;
 	}
 
-	public void setLocationPulled(String locationPulled) {
-		this.locationPulled = locationPulled;
+	public void setLocation_after_pull_out(String location_after_pull_out) {
+		this.location_after_pull_out = location_after_pull_out;
 	}
 
-	public TabEntity3(Date acqDate, Date operateDate, Date deliverDate, Date installDate, Date datePull, String reasonPull,
+	public TabEntity3(String termId, Date acqDate, Date operateDate, Date deliverDate, Date installDate, Date datePull, String reasonPull,
 			String locationPull) {
 		super();
+		this.terminalId = termId;
 		this.acquisitionDate = acqDate;
 		this.operationalDate = operateDate;
 		this.deliveryDate = deliverDate;
 		this.installationDate = installDate;
-		this.datePulled = datePull;
-		this.reasonPulled = reasonPull;
-		this.locationPulled = locationPull;
+		this.date_pulled_out = datePull;
+		this.reason_for_pull_out = reasonPull;
+		this.location_after_pull_out = locationPull;
 		
 	}
 

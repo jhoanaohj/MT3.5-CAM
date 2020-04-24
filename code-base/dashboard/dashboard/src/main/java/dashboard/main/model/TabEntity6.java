@@ -9,6 +9,8 @@ import javax.persistence.*;
 public class TabEntity6 {
 
 	@Id
+	private String terminalId;
+	@Column
 	private Boolean originalLocation;
 	@Column
 	private Date warrantyBegin;
@@ -25,16 +27,24 @@ public class TabEntity6 {
 	@Column
 	private String batteryCapacity;
 	@Column
-	private String buConnectedBranch;
+	private String bu_ups_connected_to_branch;
 	@Column
-	private String buStandAlone;
+	private String bu_ups_stand_alone;
 	@Column
-	private String buBrand;
+	private String bu_ups_brand;
 	@Column
-	private String buSerialNumber;
+	private String bu_ups_serial_number;
 	@Column
-	private String buBarCode;
+	private String bu_ups_barcode; 
 
+
+	public String getTerminalId() {
+		return terminalId;
+	}
+
+	public void setTerminalId(String terminalId) {
+		this.terminalId = terminalId;
+	}
 
 	public Boolean getOriginalLocation() {
 		return originalLocation;
@@ -100,44 +110,44 @@ public class TabEntity6 {
 		this.batteryCapacity = batteryCapacity;
 	}
 
-	public String getBuConnectedBranch() {
-		return buConnectedBranch;
+	public String getBu_ups_connected_to_branch() {
+		return bu_ups_connected_to_branch;
 	}
 
-	public void setBuConnectedBranch(String buConnectedBranch) {
-		this.buConnectedBranch = buConnectedBranch;
+	public void setBu_ups_connected_to_branch(String bu_ups_connected_to_branch) {
+		this.bu_ups_connected_to_branch = bu_ups_connected_to_branch;
 	}
 
-	public String getBuStandAlone() {
-		return buStandAlone;
+	public String getBu_ups_stand_alone() {
+		return bu_ups_stand_alone;
 	}
 
-	public void setBuStandAlone(String buStandAlone) {
-		this.buStandAlone = buStandAlone;
+	public void setBu_ups_stand_alone(String bu_ups_stand_alone) {
+		this.bu_ups_stand_alone = bu_ups_stand_alone;
 	}
 
-	public String getBuBrand() {
-		return buBrand;
+	public String getBu_ups_brand() {
+		return bu_ups_brand;
 	}
 
-	public void setBuBrand(String buBrand) {
-		this.buBrand = buBrand;
+	public void setBu_ups_brand(String bu_ups_brand) {
+		this.bu_ups_brand = bu_ups_brand;
 	}
 
-	public String getBuSerialNumber() {
-		return buSerialNumber;
+	public String getBu_ups_serial_number() {
+		return bu_ups_serial_number;
 	}
 
-	public void setBuSerialNumber(String buSerialNumber) {
-		this.buSerialNumber = buSerialNumber;
+	public void setBu_ups_serial_number(String bu_ups_serial_number) {
+		this.bu_ups_serial_number = bu_ups_serial_number;
 	}
 
-	public String getBuBarCode() {
-		return buBarCode;
+	public String getBu_ups_barcode() {
+		return bu_ups_barcode;
 	}
 
-	public void setBuBarCode(String buBarCode) {
-		this.buBarCode = buBarCode;
+	public void setBu_ups_barcode(String bu_ups_barcode) {
+		this.bu_ups_barcode = bu_ups_barcode;
 	}
 
 	public TabEntity6(Boolean origLocation, Date warrantyStart, Date warrantyend, String servProvider, String battSerial, Date battDeliver,
@@ -151,11 +161,11 @@ public class TabEntity6 {
 		this.batteryDeliveryDate = battDeliver;
 		this.batteryInstallationDate = battInstall;
 		this.batteryCapacity = battCapacity;
-		this.buConnectedBranch = buConnect;
-		this.buStandAlone = buStand;
-		this.buBrand = bubrand;
-		this.buSerialNumber = buSerial;
-		this.buBarCode = buBar;
+		this.bu_ups_connected_to_branch = buConnect;
+		this.bu_ups_stand_alone = buStand;
+		this.bu_ups_brand = bubrand;
+		this.bu_ups_serial_number = buSerial;
+		this.bu_ups_barcode = buBar;
 		
 	}
 
