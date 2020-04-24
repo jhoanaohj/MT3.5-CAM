@@ -1,4 +1,4 @@
-package dashboard.main.Model;
+package dashboard.main.model;
 
 import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
@@ -10,7 +10,7 @@ import javax.persistence.SqlResultSetMapping;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @SqlResultSetMapping(name = "queryResult", classes = {
-		@ConstructorResult(targetClass = dashboard.main.Model.EntityInventory.class, columns = {
+		@ConstructorResult(targetClass = dashboard.main.model.EntityInventory.class, columns = {
 				@ColumnResult(name = "terminal_id", type = String.class),
 				@ColumnResult(name = "machine_name", type = String.class),
 				@ColumnResult(name = "machine_type", type = String.class),
@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 		}) })
 @NamedNativeQueries({
-		@NamedNativeQuery(name = "QueryAllData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory  WHERE machine_type = 'CAM'", resultSetMapping = "queryResult"),
+		@NamedNativeQuery(name = "QueryAllData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory WHERE machine_type = 'CAM  '", resultSetMapping = "queryResult"),
 //		@NamedNativeQuery(name = "QuerySpecificData.getData", query = "SELECT terminal_id, machine_name, machine_type, handled_by, vendor, area, onsite, address, status FROM tbl_inventory  WHERE terminal_id = ?1", resultSetMapping = "queryResult")
 
 })

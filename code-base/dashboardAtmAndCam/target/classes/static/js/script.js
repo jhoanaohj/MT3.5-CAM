@@ -1,227 +1,72 @@
-var staticUrl = "/queries/31370100";
+var data = [{"symbol":"MSFT","date":"Day1","price":40},{"symbol":"MSFT","date":"Day2","price":23.18},{"symbol":"MSFT","date":"Day3","price":24.43},{"symbol":"MSFT","date":"Day4","price":25.49},{"symbol":"MSFT","date":"Day5","price":27.48},{"symbol":"MSFT","date":"Day6","price":29.27},{"symbol":"IBM","date":"Day1","price":100.52},{"symbol":"IBM","date":"Day2","price":92.11},{"symbol":"IBM","date":"Day3","price":106.11},{"symbol":"IBM","date":"Day4","price":99.95},{"symbol":"IBM","date":"Day5","price":96.31},{"symbol":"IBM","date":"Day6","price":98.33},{"symbol":"AAPL","date":"Day1","price":21},{"symbol":"AAPL","date":"Day2","price":26.19},{"symbol":"AAPL","date":"Day3","price":25.41},{"symbol":"AAPL","date":"Day4","price":30.47},{"symbol":"AAPL","date":"Day5","price":12.88},{"symbol":"AAPL","date":"Day6","price":9.78}]
 
- $.getJSON(staticUrl, (data) => {
-    console.log(data);
-    console.log(data[0].operation_start);
-});
+// Set the dimensions of the canvas / graph
+var margin = {top: 30, right: 20, bottom: 30, left: 50},
+    width = 600 - margin.left - margin.right,
+    height = 270 - margin.top - margin.bottom;
 
-var staticUrlTop5Downtime = "/top5downtime/";
- var jsonData = $(document).ready(() => {
-    $.ajax({
-        url: (staticUrlTop5Downtime),
-        method: "GET",
-        dataType: "json",
-        success: (data) => {
-            $.each(data, (key, val) => {
-                $("#top5Downtime").append("<li>" + val.event_description + " - " + val.error_count + "</li>");
-            });
-        }
-    })
-});
- 
-const sample = [
-    {
-      language: 'Rust',
-      value: 78.9,
-      color: '#000000'
-    },
-    {
-      language: 'Kotlin',
-      value: 75.1,
-      color: '#00a2ee'
-    },
-    {
-      language: 'Python',
-      value: 68.0,
-      color: '#fbcb39'
-    },
-    {
-      language: 'TypeScript',
-      value: 67.0,
-      color: '#007bc8'
-    },
-    {
-      language: 'Go',
-      value: 65.6,
-      color: '#65cedb'
-    },
-    {
-      language: 'Swift',
-      value: 65.1,
-      color: '#ff6e52'
-    },
-    {
-      language: 'JavaScript',
-      value: 61.9,
-      color: '#f9de3f'
-    },
-    {
-      language: 'C#',
-      value: 60.4,
-      color: '#5d2f8e'
-    },
-    {
-      language: 'F#',
-      value: 59.6,
-      color: '#008fc9'
-    },
-    {
-      language: 'Clojure',
-      value: 59.6,
-      color: '#507dca'
-    },
-    {
-      language: 'JavaSpring',
-      value: 100,
-      color: 'red'
-    },
-    {
-      language: 'PHP',
-      value: 20.96,
-      color: 'red'
-    },
-    {
-        language: 'SpringBoot',
-        value: 13.6,
-        color: 'red'
-      }
-  ];
+// Parse the date / time
+//var parseDate = d3.time.format("%b %Y").parse;
 
-  //const svg = d3.select('svg');
-  
-  const svgContainer = d3.select('#bar-chart')
-  .append("svg");
-  
-  const margin = 80;
-  const svgWidth = 50;
-  const width = 1100 - 2 * margin;
-  const height = 600 - 2 * margin;
+// Set the ranges
+var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
+var y = d3.scale.linear().range([height, 0]);
 
-  const chart = svgContainer.append('g')
-    .attr('transform', "translate(" + svgWidth + ","+ margin +")");
+// Define the axes
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
 
-  const xScale = d3.scaleBand()
-    .range([0, width])
-    .domain(sample.map((s) => s.language))
-    .padding(0.4)
-  
-  const yScale = d3.scaleLinear()
-    .range([height, 0])
-    .domain([0, 100]);
+var yAxis = d3.svg.axis().scale(y)
+    .orient("left").ticks(5).innerTickSize(-width)
+    .outerTickSize(0)
+    .tickPadding(10);
 
-  // vertical grid lines
-  // const makeXLines = () => d3.axisBottom()
-  //   .scale(xScale)
+// Define the line
+var priceline = d3.svg.line()	
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.price); });
+    
+// Adds the svg canvas
+var svg = d3.select("#lineChart")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
 
-  const makeYLines = () => d3.axisLeft()
-    .scale(yScale)
+// Get the data
+    // Scale the range of the data
+    x.domain(data.map(function(d){ return d.date; }));
+    y.domain([0, d3.max(data, function(d) { return d.price; })]);
 
-  chart.append('g')
-    .attr('transform', `translate(0, ${height})`)
-    .call(d3.axisBottom(xScale));
+    // Nest the entries by symbol
+    var dataNest = d3.nest()
+        .key(function(d) {return d.symbol;})
+        .entries(data);
 
-  chart.append('g')
-    .call(d3.axisLeft(yScale));
+    var color = d3.scale.category10();  // set the colour scale
 
-  chart.append('g')
-    .attr('class', 'grid')
-    .call(makeYLines()
-      .tickSize(-width, 0, 0)
-      .tickFormat('')
-    )
+    // Loop through each symbol / key
+    dataNest.forEach(function(d) {
 
-  const barGroups = chart.selectAll()
-    .data(sample)
-    .enter()
-    .append('g')
+        svg.append("path")
+            .attr("class", "line")
+            .style("stroke", function() { // Add dynamically
+                return d.color = color(d.key); })
+            .attr("d", priceline(d.values));
 
-  barGroups
-    .append('rect')
-    .attr('class', 'bar')
-    .attr('x', (g) => xScale(g.language))
-    .attr('y', (g) => yScale(g.value))
-    .attr('height', (g) => height - yScale(g.value))
-    .attr('width', xScale.bandwidth())
-    .on('mouseenter', function (actual, i) {
-      d3.selectAll('.value')
-        .attr('opacity', 0)
+    });
 
-      d3.select(this)
-        .transition()
-        .duration(300)
-        .attr('opacity', 0.6)
-        .attr('x', (a) => xScale(a.language) - 5)
-        .attr('width', xScale.bandwidth() + 10)
+    // Add the X Axis
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
 
-      const y = yScale(actual.value)
-
-      line = chart.append('line')
-        .attr('id', 'limit')
-        .attr('x1', 0)
-        .attr('y1', y)
-        .attr('x2', width)
-        .attr('y2', y)
-
-      barGroups.append('text')
-        .attr('class', 'divergence')
-        .attr('x', (a) => xScale(a.language) + xScale.bandwidth() / 2)
-        .attr('y', (a) => yScale(a.value) + 30)
-        .attr('fill', 'white')
-        .attr('text-anchor', 'middle')
-        .text((a, idx) => {
-          const divergence = (a.value - actual.value).toFixed(1)
-          
-          let text = ''
-          if (divergence > 0) text += '+'
-          text += `${divergence}%`
-
-          return idx !== i ? text : '';
-        })
-
-    })
-    .on('mouseleave', function () {
-      d3.selectAll('.value')
-        .attr('opacity', 1)
-
-      d3.select(this)
-        .transition()
-        .duration(300)
-        .attr('opacity', 1)
-        .attr('x', (a) => xScale(a.language))
-        .attr('width', xScale.bandwidth())
-
-      chart.selectAll('#limit').remove()
-      chart.selectAll('.divergence').remove()
-    })
-
-  barGroups 
-    .append('text')
-    .attr('class', 'value')
-    .attr('x', (a) => xScale(a.language) + xScale.bandwidth() / 2)
-    .attr('y', (a) => yScale(a.value) + 30)
-    .attr('text-anchor', 'middle')
-    .text((a) => `${a.value}%`)
-  
-    svgContainer
-    .append('text')
-    .attr('class', 'label')
-    .attr('x', -(height / 2) - margin)
-    .attr('y', svgWidth / 2.4)
-    .attr('transform', 'rotate(-90)')
-    .attr('text-anchor', 'middle')
-    .text('Love meter (%)')
-
-    svgContainer.append('text')
-    .attr('class', 'label')
-    .attr('x', width / 2 + margin)
-    .attr('y', height + margin * 1.7)
-    .attr('text-anchor', 'middle')
-    .text('Languages')
-
-    svgContainer.append('text')
-    .attr('class', 'title')
-    .attr('x', width / 2 + margin)
-    .attr('y', 40)
-    .attr('text-anchor', 'middle')
-    .text('Most loved programming languages in 2018');
-
+    // Add the Y Axis
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+        
+		d3.select(".y>path").remove();        

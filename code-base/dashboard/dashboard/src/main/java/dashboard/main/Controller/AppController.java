@@ -1,22 +1,19 @@
-package dashboard.main.Controller;
+package dashboard.main.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMethod;
+//import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+//import org.springframework.web.servlet.ModelAndView;
 
-import dashboard.main.Model.EntityInventory;
-import dashboard.main.Model.EntityTab1;
-import dashboard.main.Repository.RepositoryInventory;
-import dashboard.main.Repository.RepositoryTab1;
+import dashboard.main.model.EntityInventory;
+//import dashboard.main.model.EntityTab1;
+import dashboard.main.repository.RepositoryInventory;
+
 
 @Controller
 public class AppController {
@@ -24,8 +21,8 @@ public class AppController {
 	@Autowired
 	private RepositoryInventory repositoryInventory;
 	
-	@Autowired
-	private RepositoryTab1 repositoryTab1;
+//	@Autowired
+//	private RepositoryTab1 repositoryTab1;
 	
 	@GetMapping("/inventory")
 	public List<EntityInventory> listInventory() {
@@ -40,17 +37,17 @@ public class AppController {
 	}
 
 	/////////////////////////////////////////////////////////////////////
-	@ModelAttribute(value = "/tab1")
-    public List<EntityTab1> tab_1() {
-        return repositoryTab1.getQueryTab1();
-    }
-	
-	@GetMapping(value = "/entitytab1")
-	public ModelAndView tab1() {
-		ModelAndView mav = new ModelAndView("/entitytab1");
-		mav.addObject("tab1", repositoryTab1.getQueryTab1());
-		return mav;
-	}
+//	@ModelAttribute(value = "/tab1")
+//    public List<EntityTab1> tab_1() {
+//        return repositoryTab1.getQueryTab1();
+//    }
+//	
+//	@GetMapping(value = "/entitytab1")
+//	public ModelAndView tab1() {
+//		ModelAndView mav = new ModelAndView("/entitytab1");
+//		mav.addObject("tab1", repositoryTab1.getQueryTab1());
+//		return mav;
+//	}
 	
 	/////////////////////////////////////////////////////////////////////
 //	@GetMapping(value = "/queries/{id}")

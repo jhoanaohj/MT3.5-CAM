@@ -1,11 +1,12 @@
-package dashboard.main.Repository;
+package dashboard.main.repository;
 
-import dashboard.main.Model.EntityInventory;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 //import org.springframework.data.repository.query.Param;
+
+import dashboard.main.model.EntityInventory;
 
 
 public interface RepositoryInventory extends JpaRepository<EntityInventory, Long> {

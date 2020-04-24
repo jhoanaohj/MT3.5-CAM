@@ -10,7 +10,7 @@ import javax.persistence.SqlResultSetMapping;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@SqlResultSetMapping(name = "top5Result", classes = {
+@SqlResultSetMapping(name = "topDownResult", classes = {
 		@ConstructorResult(targetClass = dashboard.atmandcam.model.Top5Downtime.class, columns= {
 				@ColumnResult(name = "event_description", type = String.class),
 				@ColumnResult(name = "error_count", type = Integer.class)
@@ -19,11 +19,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @NamedNativeQueries({
 	@NamedNativeQuery(
-			name = "GetTop5Downtime.getData",
-			query = "SELECT event_description, COUNT(*) AS error_count FROM dashboard.event WHERE terminal_id IN(\r\n" + 
-					"	SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM'\r\n" + 
-					") GROUP by event_description ORDER by error_count DESC LIMIT 5",
-			resultSetMapping = "top5Result"
+			name = "GetTopDowntime.getData",
+			query = "SELECT event_description, COUNT(*) AS error_count "
+					+ "FROM dashboard.down_event "
+					+ "WHERE down_date = ?1 "
+					+ "AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')"
+					+ "GROUP BY event_description ORDER BY error_count DESC",
+			resultSetMapping = "topDownResult"
+			),
+	@NamedNativeQuery(
+			name = "GetTopRangeDowntime.getData",
+			query = "SELECT event_description, COUNT(*) AS error_count "
+					+ "FROM dashboard.down_event "
+					+ "WHERE down_date BETWEEN ?1 AND ?2 "
+					+ "AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')"
+					+ "GROUP BY event_description ORDER BY error_count DESC",
+			resultSetMapping = "topDownResult"
 			)
 })
 

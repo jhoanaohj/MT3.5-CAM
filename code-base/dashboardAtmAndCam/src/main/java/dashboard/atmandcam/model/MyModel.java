@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 			resultSetMapping = "queryResult"),
 	@NamedNativeQuery(
 			name = "QuerySpecificData.getData",
-			query = "SELECT terminal_id, machine_name, machine_type, operation_start, operation_end FROM dashboard.inventory  WHERE terminal_id = ?1",
+			query = "SELECT terminal_id, machine_name, machine_type, operation_start, operation_end FROM dashboard.inventory WHERE terminal_id = ?1",
 			resultSetMapping = "queryResult"
 			)
 })

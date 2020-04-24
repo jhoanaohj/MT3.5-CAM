@@ -1,7 +1,8 @@
 var data = [
     {"platform": "Android", "percentage": 40.11},
     {"platform": "Windows", "percentage": 36.69},
-    {"platform": "iOS", "percentage": 13.06}
+    {"platform": "iOS", "percentage": 13.06},
+    {"platform": "huawei", "percentage": 50.06}
 ];
 
 
