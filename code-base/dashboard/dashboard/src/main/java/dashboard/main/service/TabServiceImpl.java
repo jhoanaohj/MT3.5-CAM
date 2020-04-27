@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dashboard.main.model.TabEntity;
-import dashboard.main.model.TabEntity2;
-import dashboard.main.model.TabEntity3;
-import dashboard.main.model.TabEntity4;
-import dashboard.main.model.TabEntity5;
-import dashboard.main.model.TabEntity6;
-import dashboard.main.model.TabEntity7;
+import dashboard.main.Model.TabEntity;
+import dashboard.main.Model.TabEntity2;
+import dashboard.main.Model.TabEntity3;
+import dashboard.main.Model.TabEntity4;
+import dashboard.main.Model.TabEntity5;
+import dashboard.main.Model.TabEntity6;
+import dashboard.main.Model.TabEntity7;
 import dashboard.main.repository.*;
 
 @Service
@@ -31,7 +31,6 @@ public class TabServiceImpl implements TabService {
 	private TabRepository6 tabRepository6;
 	@Autowired
 	private TabRepository7 tabRepository7;
-	
 
 	@Override
 	public List<TabEntity> findAll() {
@@ -48,14 +47,8 @@ public class TabServiceImpl implements TabService {
 		return tabRepository.save(entity);
 	}
 
-	@Override
-	public void deleteTabs(String terminalId) {
-		// tabRepository.deleteById(terminalId);
-		
-	}
-	
-	////////////////////////////////////////////////////////
-	
+////////////////////////////////////////////////////////
+
 	@Override
 	public List<TabEntity2> findAll2() {
 		return tabRepository2.findAll();
@@ -70,9 +63,8 @@ public class TabServiceImpl implements TabService {
 	public TabEntity2 saveTab(TabEntity2 entity) {
 		return tabRepository2.save(entity);
 	}
-	
-	
-	/////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////
 
 	@Override
 	public List<TabEntity3> findAll3() {
@@ -88,10 +80,9 @@ public class TabServiceImpl implements TabService {
 	public TabEntity3 saveTab(TabEntity3 entity) {
 		return tabRepository3.save(entity);
 	}
-	
 
-	/////////////////////////////////////////////////////////
-	
+/////////////////////////////////////////////////////////
+
 	@Override
 	public List<TabEntity4> findAll4() {
 		return tabRepository4.findAll4();
@@ -106,8 +97,8 @@ public class TabServiceImpl implements TabService {
 	public TabEntity4 saveTab(TabEntity4 entity) {
 		return tabRepository4.save(entity);
 	}
-	
-	/////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////
 
 	@Override
 	public List<TabEntity5> findAll5() {
@@ -123,8 +114,8 @@ public class TabServiceImpl implements TabService {
 	public TabEntity5 saveTab(TabEntity5 entity) {
 		return tabRepository5.save(entity);
 	}
-	
-	/////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////
 
 	@Override
 	public List<TabEntity6> findAll6() {
@@ -140,8 +131,8 @@ public class TabServiceImpl implements TabService {
 	public TabEntity6 saveTab(TabEntity6 entity) {
 		return tabRepository6.save(entity);
 	}
-	
-	/////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////
 
 	@Override
 	public List<TabEntity7> findAll7() {
@@ -157,7 +148,5 @@ public class TabServiceImpl implements TabService {
 	public TabEntity7 saveTab(TabEntity7 entity) {
 		return tabRepository7.save(entity);
 	}
-
-
 
 }

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import dashboard.main.model.TabEntity6;
+import dashboard.main.Model.TabEntity6;
 
 public interface TabRepository6 extends JpaRepository<TabEntity6, String>{
 

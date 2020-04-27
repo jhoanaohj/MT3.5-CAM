@@ -5,7 +5,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
-import dashboard.main.model.TabEntity;
+import dashboard.main.Model.TabEntity;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,9 +28,6 @@ public class InitApplicationTestService {
 		// this modifies the dummy record
 		tabService.saveTab(new TabEntity("1", "2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", true));
 		
-		// this deletes the dummy record
-		tabService.deleteTabs("4");
-
 		LOGGER.info("Initialization completed");
 	}
 }
