@@ -1,0 +1,226 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+table thead tr {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    background: #36304a;
+}
+
+.close {
+    float: right;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: .75;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+}
+
+/* ---------------------------------------------------
+    MODAL STYLE
+----------------------------------------------------- */
+.tabme {
+    display: none;
+    margin-top: 10px;
+    height: 440px;
+}
+
+.tabb {
+    position: relative;
+    left: -25px;
+    list-style-type: none;
+}
+
+.tabbs {
+    background-color: red;
+}
+
+.tabs {
+    list-style-type: none;
+    cursor: pointer;
+    float: left;
+    padding: 10px;
+    margin: 1px;
+    background-color: #5eade7;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.tabs:hover {
+    transform: scale(1.05);
+    background-color: #3688ce;
+    transition: 0.3s;
+}
+
+.selected {
+    transform: scale(1.05);
+    background-color: #3688ce;
+    transition: 0.3s;
+}
+
+.btn-info {
+    height: 25px;
+    font-size: 12px;
+    padding: 4px 10px;
+    text-align: center;
+    display: inline;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.5em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 10px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #414a4c;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #7A8081;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss:hover {
+    background: #fff;
+    color: #707273;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    display: none;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #414a4c;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nav-tabs {
+  border-bottom:none;
+}
+
+.nav-tabs .nav-link.active {
+  background-color:#e2e2e2;
+  border-bottom:#e2e2e2;
+  font-weight: bold;
+}
+
+.tab-pane.active .tab-pane-header {
+  padding:2rem;
+  background-color:#e2e2e2;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+  margin-bottom:1rem;
+}
+

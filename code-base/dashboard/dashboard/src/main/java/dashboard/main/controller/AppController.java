@@ -1,64 +1,54 @@
 package dashboard.main.controller;
 
-import java.util.List;
-
+import dashboard.main.model.InventoryEntity;
+import dashboard.main.repository.InventoryRepository;
+import dashboard.main.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.ModelAttribute;
-//import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-//import org.springframework.web.servlet.ModelAndView;
 
-import dashboard.main.Model.EntityInventory;
-//import dashboard.main.model.EntityTab1;
-import dashboard.main.repository.RepositoryInventory;
-//import dashboard.main.repository.RepositoryTab1;
+import java.util.List;
 
 @Controller
 public class AppController {
 
-	@Autowired
-	private RepositoryInventory repositoryInventory;
-	
-//	@Autowired
-//	private RepositoryTab1 repositoryTab1;
-	
-	@GetMapping("/inventory")
-	public List<EntityInventory> listInventory() {
-		System.out.println("In GetAll");
-		return repositoryInventory.getQueryResult();
-	}
+    @Autowired
+    private InventoryRepository inventoryRepository;
 
-	@GetMapping(value = "/queries")
-	@ResponseBody
-	public List<EntityInventory> getResult() {
-		return repositoryInventory.getQueryResult();
-	}
+    @GetMapping("/inventory")
+    public List<InventoryEntity> listInventory() {
+        return inventoryRepository.findAll();
+    }
 
-	/////////////////////////////////////////////////////////////////////
-//	@ModelAttribute(value = "/tab1")
-//    public List<EntityTab1> tab_1() {
-//        return repositoryTab1.getQueryTab1();
-//    }
-//	
-//	@GetMapping(value = "/entitytab1")
-//	public ModelAndView tab1() {
-//		ModelAndView mav = new ModelAndView("/entitytab1");
-//		mav.addObject("tab1", repositoryTab1.getQueryTab1());
-//		return mav;
-//	}
-	
-	/////////////////////////////////////////////////////////////////////
-//	@GetMapping(value = "/queries/{id}")
-//	public List<EntityInventory> getSpecific(@PathVariable String id) {
-//		return repositoryInventory.getSpecificResult(id);
-//	}
+    @GetMapping(value = "/queries")
+    @ResponseBody
+    public List<InventoryEntity> getResult() {
+        return inventoryRepository.findAll();
+    }
 
-//	@GetMapping(value = "/entitytab1")
-//	@ResponseBody
-//	public List<EntityTab1> getQueryTab1() {
-//		return repositoryTab1.getQueryTab1();
-//	}
+    @Autowired
+    InventoryService inventoryService;
 
+    @GetMapping(value = {"/tabEdit", "/tabEdit/{terminal_id}"})
+    public String tabEditForm(Model model, @PathVariable(required = false, name = "terminal_id") String terminalId) {
+        if (terminalId != null) {
+            model.addAttribute("inventory", inventoryService.findOne(terminalId));
+        } else {
+            model.addAttribute("inventory", new InventoryEntity());
+        }
+        return "tabEdit";
+    }
+
+    @PostMapping(value = {"/tabEdit"})
+    public String tabEdit(Model model, InventoryEntity entity) {
+        inventoryService.save(entity);
+        model.addAttribute("inventory", entity);
+        return "inventory";
+    }
+
+    
 }

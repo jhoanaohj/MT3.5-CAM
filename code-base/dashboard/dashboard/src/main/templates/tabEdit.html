@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <script type="text/javascript">
+        $('#profileTab a').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+    </script>
+</head>
+
+<body>
+<div class="container">
+
+    <form action="/tabEdit" class="form-group" method="post" th:action="@{/tabEdit}">
+        <div class="container border-1">
+            <div class="row">
+                <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#tab1-tab" id="tab1">Tab 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab2-tab" id="tab2">Tab 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab3-tab" id="tab3">Tab 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab4-tab" id="tab4">Tab 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab5-tab" id="tab5">Tab 5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab6-tab" id="tab6">Tab 6</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab7-tab" id="tab7">Tab 7</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab8-tab" id="tab8">Tab 8</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab9-tab" id="tab9">Tab 9</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab10-tab" id="tab10">Tab 10</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab11-tab" id="tab11">Tab 11</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div aria-labelledby="tab1" class="tab-pane active" id="tab1-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>Terminal ID</label>
+                        <input class="form-control" readonly th:field="${inventory.terminalId}"/>
+                        <label>Machine Name</label>
+                        <input class="form-control" th:field="${inventory.machineName}" type="text"/>
+                        <label>Machine Type</label>
+                        <input class="form-control" th:field="${inventory.machineType}" type="text"/>
+                        <label>RC Code</label>
+                        <input class="form-control" th:field="${inventory.rcCode}" type="text"/>
+                        <label>Handled By</label>
+                        <input class="form-control" th:field="${inventory.handledBy}" type="text"/>
+                        <label>Model</label>
+                        <input class="form-control" th:field="${inventory.model}" type="text"/>
+                        <label>OS</label>
+                        <input class="form-control" th:field="${inventory.os}" type="text"/>
+                        <label>Vendor</label>
+                        <input class="form-control" th:field="${inventory.vendor}" type="text"/>
+                        <label>Serial Number</label>
+                        <input class="form-control" th:field="${inventory.serialNumber}" type="text"/>
+                        <label>Status</label>
+                        <input class="form-control" th:field="${inventory.status}" type="text"/>
+                        <label>Area</label>
+                        <input class="form-control" th:field="${inventory.area}" type="text"/>
+                        <label>Site Class</label>
+                        <input class="form-control" th:field="${inventory.onsite}" type="text"/>
+                        <label>Memory</label>
+                        <input class="form-control" th:field="${inventory.memory}" type="text"/>
+                        <label>RFID</label>
+                        <input class="form-control" th:field="${inventory.rfid}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab2" class="tab-pane" id="tab2-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>Operation Start</label>
+                        <input class="form-control" th:field="${inventory.operationStart}" type="time"/>
+                        <label>Operation End</label>
+                        <input class="form-control" th:field="${inventory.operationEnd}" type="time"/>
+                        <label>Create Date</label>
+                        <input class="form-control" th:field="${inventory.createDate}" type="text"/>
+                        <label>Update Date</label>
+                        <input class="form-control" th:field="${inventory.updateDate}" type="text"/>
+                        <label>Address</label>
+                        <input class="form-control" th:field="${inventory.address}" type="text"/>
+                        <label>Region ISO Code</label>
+                        <input class="form-control" th:field="${inventory.provinceIsoCode}" type="text"/>
+                        <label>Rating</label>
+                        <input class="form-control" th:field="${inventory.rating}" type="text"/>
+                        <label>Stand Alone Branch</label>
+                        <input class="form-control" th:field="${inventory.standAloneBranch}" type="text"/>
+                        <label>PO Number</label>
+                        <input class="form-control" th:field="${inventory.poNumber}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab3" class="tab-pane" id="tab3-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>Acquisition Date</label>
+                        <input class="form-control" th:field="${inventory.acquisitionDate}" type="date"/>
+                        <label>Operational Date</label>
+                        <input class="form-control" th:field="${inventory.operationalDate}" type="date"/>
+                        <label>Delivery Date</label>
+                        <input class="form-control" th:field="${inventory.deliveryDate}" type="date"/>
+                        <label>Installation Date</label>
+                        <input class="form-control" th:field="${inventory.installationDate}" type="date"/>
+                        <label>Date Pulled Out</label>
+                        <input class="form-control" th:field="${inventory.datePulledOut}" type="date"/>
+                        <label>Reason for Pull Out</label>
+                        <input class="form-control" th:field="${inventory.reasonForPullOut}" type="text"/>
+                        <label>Location After Pull Out</label>
+                        <input class="form-control" th:field="${inventory.locationAfterPullOut}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab4" class="tab-pane" id="tab4-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>MA Service Provider</label>
+                        <input class="form-control" th:field="${inventory.maServiceProvider}" type="text"/>
+                        <label>MA Effective Date</label>
+                        <input class="form-control" th:field="${inventory.maEffectiveDate}" type="date"/>
+                        <label>Asset Code</label>
+                        <input class="form-control" th:field="${inventory.assetCode}" type="text"/>
+                        <label>Software Build Version</label>
+                        <input class="form-control" th:field="${inventory.softwareBuildVersion}" type="text"/>
+                        <label>UEPP Loader Version</label>
+                        <input class="form-control" th:field="${inventory.ueppLoaderVersion}" type="text"/>
+                        <label>UEPP Firmware Version</label>
+                        <input class="form-control" th:field="${inventory.ueppFirmwareVersion}" type="text"/>
+                        <label>UEPP SN</label>
+                        <input class="form-control" th:field="${inventory.ueppSn}" type="text"/>
+                        <label>TMD Security Device</label>
+                        <input class="form-control" th:field="${inventory.tmdSecurityDevice}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab5" class="tab-pane" id="tab5-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>Encrypting Pin Pad</label>
+                        <input class="form-control" th:field="${inventory.encryptingPinPad}" type="text"/>
+                        <label>EPP Model</label>
+                        <input class="form-control" th:field="${inventory.eppModel}" type="text"/>
+                        <label>EPP Hardware Version Number</label>
+                        <input class="form-control" th:field="${inventory.eppHardwareVersionNumber}" type="text"/>
+                        <label>EPP Firmware</label>
+                        <input class="form-control" th:field="${inventory.encryptingPinPadFirmware}" type="text"/>
+                        <label>Loader Version of EPP Firmware</label>
+                        <input class="form-control" th:field="${inventory.loaderVersionOfEppFirmware}" type="text"/>
+                        <label>PCI PTS Standard</label>
+                        <input class="form-control" th:field="${inventory.pciPtsStandard}" type="text"/>
+                        <label>PCI PTS Approval Number</label>
+                        <input class="form-control" th:field="${inventory.pciPtsApprovalNumber}" type="text"/>
+                        <label>PCI PTS Certificate Expiry Date</label>
+                        <input class="form-control" th:field="${inventory.pciCertificateExpiryDate}" type="date"/>
+                        <label>PCI PTS Product Type</label>
+                        <input class="form-control" th:field="${inventory.pciPtsProductType}" type="date"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab6" class="tab-pane" id="tab6-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>Original Location</label>
+                        <input class="form-control" th:field="${inventory.originalLocation}" type="text"/>
+                        <label>Warranty Begin</label>
+                        <input class="form-control" th:field="${inventory.warrantyBegin}" type="date"/>
+                        <label>Warranty End</label>
+                        <input class="form-control" th:field="${inventory.warrantyEnd}" type="text"/>
+                        <label>Service Provider</label>
+                        <input class="form-control" th:field="${inventory.serviceProvider}" type="text"/>
+                        <label>Battery Serial Number</label>
+                        <input class="form-control" th:field="${inventory.batterySerialNumber}" type="text"/>
+                        <label>Battery Delivery Date</label>
+                        <input class="form-control" th:field="${inventory.batteryDeliveryDate}" type="date"/>
+                        <label>Battery Installation Date</label>
+                        <input class="form-control" th:field="${inventory.batteryInstallationDate}" type="date"/>
+                        <label>Battery Capacity</label>
+                        <input class="form-control" th:field="${inventory.batteryCapacity}" type="text"/>
+                        <label>BU UPS Connected To Branch</label>
+                        <input class="form-control" th:field="${inventory.buUpsConnectedToBranch}" type="text"/>
+                        <label>BU UPS Stand Alone</label>
+                        <input class="form-control" th:field="${inventory.buUpsStandAlone}" type="text"/>
+                        <label>BU UPS Brand</label>
+                        <input class="form-control" th:field="${inventory.buUpsBrand}" type="text"/>
+                        <label>BU UPS Serial Number</label>
+                        <input class="form-control" th:field="${inventory.buUpsSerialNumber}" type="text"/>
+                        <label>BU UPS Bar Code</label>
+                        <input class="form-control" th:field="${inventory.buUpsBarcode}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab7" class="tab-pane" id="tab7-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>ESDMS Installed</label>
+                        <input class="form-control" th:field="${inventory.esdmsInstalled}" type="text"/>
+                        <label>ESDMS Date</label>
+                        <input class="form-control" th:field="${inventory.esdmsDate}" type="date"/>
+                        <label>CPP Installed</label>
+                        <input class="form-control" th:field="${inventory.cppInstalled}" type="text"/>
+                        <label>CPP Date</label>
+                        <input class="form-control" th:field="${inventory.cppDate}" type="date"/>
+                        <label>TMD Installed</label>
+                        <input class="form-control" th:field="${inventory.tmdInstalled}" type="text"/>
+                        <label>TMD Date</label>
+                        <input class="form-control" th:field="${inventory.tmdDate}" type="date"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab8" class="tab-pane" id="tab8-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>UPS Serial Number</label>
+                        <input class="form-control" th:field="${inventory.upsSerialNumber}" type="text"/>
+                        <label>UPS Bar Code</label>
+                        <input class="form-control" th:field="${inventory.upsBarcode}" type="text"/>
+                        <label>UPS Delivery Date</label>
+                        <input class="form-control" th:field="${inventory.upsDeliveryDate}" type="date"/>
+                        <label>UPS PO Number</label>
+                        <input class="form-control" th:field="${inventory.upsPoNumber}" type="text"/>
+                        <label>UPS Installation Date</label>
+                        <input class="form-control" th:field="${inventory.upsInstallationDate}" type="date"/>
+                        <label>UPS Warranty Start</label>
+                        <input class="form-control" th:field="${inventory.upsWarrantyStart}" type="date"/>
+                        <label>UPS Warranty End</label>
+                        <input class="form-control" th:field="${inventory.upsWarrantyEnd}" type="date"/>
+                        <label>UPS Vendor</label>
+                        <input class="form-control" th:field="${inventory.upsVendor}" type="text"/>
+                        <label>UPS Brand</label>
+                        <input class="form-control" th:field="${inventory.upsBrand}" type="text"/>
+                        <label>UPS Model</label>
+                        <input class="form-control" th:field="${inventory.upsModel}" type="text"/>
+                        <label>UPS Capacity</label>
+                        <input class="form-control" th:field="${inventory.upsCapacity}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab9" class="tab-pane" id="tab9-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>C Software Build</label>
+                        <input class="form-control" th:field="${inventory.cSoftwareBuild}" type="text"/>
+                        <label>C Encrypting Pin Pad Firmware</label>
+                        <input class="form-control" th:field="${inventory.cEncryptingPinPadFirmware}" type="text"/>
+                        <label>C Encrypting Pin Pad Firmware Type</label>
+                        <input class="form-control" th:field="${inventory.cEncryptingPinPadFirmwareType}" type="text"/>
+                        <label>C Encrypting Pin Pad Firmware Serial Number</label>
+                        <input class="form-control" th:field="${inventory.cEncryptingPinPadFirmwareSerialNumber}" type="text"/>
+                        <label>C Encrypting Pin Pad</label>
+                        <input class="form-control" th:field="${inventory.cEncryptingPinPad}" type="text"/>
+                        <label>C Remote Status Monitor</label>
+                        <input class="form-control" th:field="${inventory.cRemoteStatusMonitor}" type="text"/>
+                        <label>C CCTV</label>
+                        <input class="form-control" th:field="${inventory.cCctv}" type="text"/>
+                        <label>C Standard Metal Pin Shield</label>
+                        <input class="form-control" th:field="${inventory.cStandardMetalPinShield}" type="text"/>
+                        <label>C TMD Security Device</label>
+                        <input class="form-control" th:field="${inventory.cTmdSecurityDevice}" type="text"/>
+                        <label>C Solid Core</label>
+                        <input class="form-control" th:field="${inventory.cSolidcore}" type="text"/>
+                        <label>C Bolting</label>
+                        <input class="form-control" th:field="${inventory.cBolting}" type="text"/>
+                        <label>C Topper Vestibule Key</label>
+                        <input class="form-control" th:field="${inventory.cTopperVestibuleKey}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab10" class="tab-pane" id="tab10-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>C Vestibule Signage</label>
+                        <input class="form-control" th:field="${inventory.cTopperVestibuleSignage}" type="text"/>
+                        <label>C Topper Vestibule Timer</label>
+                        <input class="form-control" th:field="${inventory.cTopperVestibuleTimer}" type="text"/>
+                        <label>C Standard ATM Stickers</label>
+                        <input class="form-control" th:field="${inventory.cStandardAtmStickers}" type="text"/>
+                        <label>C Topper Vestibule Padlock</label>
+                        <input class="form-control" th:field="${inventory.cTopperVestibulePadlock}" type="text"/>
+                        <label>C Tophatch Padlock</label>
+                        <input class="form-control" th:field="${inventory.cTophatchPadlock}" type="text"/>
+                    </div>
+                </div>
+                <div aria-labelledby="tab11" class="tab-pane" id="tab11-tab" role="tabpanel">
+                	<div class="form-group">
+                    	<label>C Power Box Concealing Padlock</label>
+                        <input class="form-control" th:field="${inventory.cPowerBoxConcealingPadlock}" type="text"/>
+                        <label>C Cassette</label>
+                        <input class="form-control" th:field="${inventory.cCassettes}" type="text"/>
+                        <label>C Sample MBTC ATM Card</label>
+                        <input class="form-control" th:field="${inventory.cSampleMbtcAtmCard}" type="text"/>
+                        <label>HDD Capacity</label>
+                        <input class="form-control" th:field="${inventory.hddCapacity}" type="text"/>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" value="Submit">Save</button>
+    </form>
+</div>
+</body>
+
+</html>
