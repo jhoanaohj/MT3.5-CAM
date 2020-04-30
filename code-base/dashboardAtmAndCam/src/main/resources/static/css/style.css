@@ -276,17 +276,12 @@ body {
 
  /* LINE CHART STYLE */
  
- /* path { 
-    stroke: steelblue;
-    stroke-width: 3;
-    fill: none;
+ .axis--x path {
+  display: none;
 }
 
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 2;
-    stroke-opacity: .5;
-    shape-rendering: crispEdges;
-} */
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
