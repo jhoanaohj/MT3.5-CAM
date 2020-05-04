@@ -154,7 +154,7 @@ $(document).ready(() => {
                 .attr('x', width / 2 + margin)
                 .attr('y', 40)
                 .attr('text-anchor', 'middle')
-                .text('Availability (%) of CAM for date: ' + defaultDate)
+                .text('Availability (%) of CAM per region for date: ' + defaultDate)
             /** END FOR BAR CHART */
 
             /** START OF PIE CHART */
@@ -455,7 +455,7 @@ $('#daterange').on('apply.daterangepicker', function (ev, picker) {
                 .attr('x', width / 2 + margin)
                 .attr('y', 40)
                 .attr('text-anchor', 'middle')
-                .text('Availability (%) of CAM/s for date: ' + startDate + ' - ' + endDate)
+                .text('Availability (%) of CAM/s per region for date: ' + startDate + ' - ' + endDate)
             /** END FOR BAR CHART */
 
             /** START OF PIE CHART */
