@@ -59,12 +59,54 @@
 
             <div class="container content-header">
                 <div class="row">
-                    <input type = "text" id = "daterange">
+                    <div class="col-sm-3 icons">
+                        <i class="fas fa-calendar calendar"></i><input type="text" id="daterange" class="input-field"
+                            style="cursor: pointer;">
+                    </div>
+
                 </div>
             </div>
 
-
             <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card shadow mb-4">
+                            <h5 class="card-header">
+                                Top Reason for downtime
+                            </h5>
+                            <div class="card-body">
+                                <ul id="top5Downtime">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card shadow mb-4">
+                            <h5 class="card-header">
+                                Top Down Terminals:
+                            </h5>
+                            <div class="card-body">
+                                <ol id="mostDown">
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow mb-4">
+                            <h5 class="card-header">
+                                Top Up Terminals:
+                            </h5>
+                            <div class="card-body">
+                                <ol id="mostUp">
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--End of div.row-->
+                
                 <div class="row">
                     <div class="col-12">
                         <div class="card shadow mb-5">
@@ -86,20 +128,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card shadow mb-4">
-                            <h5 class="card-header">
-                                Top Reason for downtime
-                            </h5>
-                            <div class="card-body">
-                                <ul id="top5Downtime">
 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card shadow mb-4">
                             <h5 class="card-header">
@@ -112,23 +142,21 @@
                         </div>
                     </div>
                 </div>
-                <!--End of div.row-->
-            </div>
 
+
+            </div>
+            <!--End of div.content-->
 
         </div>
-        <!--End of div.content-->
+        <!--End of div.wrapper-->
 
-    </div>
-    <!--End of div.wrapper-->
+        <!--Lib <script>-->
 
-     <!--Lib <script>-->
-    
 
-    <!--own <script>-->
-    <script src="js/script.js"></script>
-    <script src="js/datePicker.js"></script>
-    <script src="js/sidebarScript.js"></script>
+        <!--own <script>-->
+        <script src="js/script.js"></script>
+        <script src="js/datePicker.js"></script>
+        <script src="js/sidebarScript.js"></script>
 
 
 </body>

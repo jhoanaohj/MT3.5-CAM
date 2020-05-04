@@ -1,5 +1,6 @@
 // // Data Picker Initialization
 $(document).ready(() => {
+    
     $('#daterange').daterangepicker({
         opens: 'center',
         showDropdowns: true,
@@ -26,6 +27,37 @@ $(document).ready(() => {
                 $.each(data, (key, val) => {
                     $("#top5Downtime").append("<li>" + val.event_description + " - " + val.error_count + "</li>");
                 });
+            }
+        })
+    });
+
+    var mostDownDefaultTerminal = "/mostDownTerminals/" + defaultDate;
+    console.log(mostDownDefaultTerminal);
+    $(document).ready(()=>{
+        $.ajax({
+            url:(mostDownDefaultTerminal),
+            method: "GET",
+            dataType: "json",
+            success:(data)=>{
+                $.each(data,(key,val)=>{
+                    $("#mostDown").append("<li>" + val.terminal_id + " - " + val.machine_name + "</li>");
+                })
+            }
+        })
+    })
+
+    var mostUpDefaultTerminal = "/mostUpTerminals/" + defaultDate;
+    console.log(mostUpDefaultTerminal);
+    $(document).ready(()=>{
+        $.ajax({
+            url: (mostUpDefaultTerminal),
+            method: "GET",
+            dataType: "json",
+            success:(data)=>{
+                $("#mostUp").html('');
+                $.each(data,(key,val)=>{
+                    $("#mostUp").append("<li>" + val.terminal_id + " - " + val.machine_name + "</li>");
+                })
             }
         })
     });
@@ -181,11 +213,12 @@ $(document).ready(() => {
         .catch((error) => {
             console.log(error);
         });
+
     /* START OF LINE CHART */
     $(document).ready(() => {
         // set the dimensions and margins of the graph
-        var margin = { top: 20, right: 20, bottom: 30, left: 50 },
-            width = 1300 - margin.left - margin.right,
+        var margin = { top: 40, right: 20, bottom: 30, left: 50 },
+            width = 1250 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         // parse the date / time
@@ -204,16 +237,15 @@ $(document).ready(() => {
         // append the svg obgect to the body of the page
         // appends a 'group' element to 'svg'
         // moves the 'group' element to the top left margin
-        var svg = d3.select("#lineChart").append("svg")
+        var svgp = d3.select("#lineChart").append("svg")
             .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+            .attr("height", height + margin.top + margin.bottom);
+
+
+        var svg = svgp.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         function draw(data) {
-            console.log(data[0].availability_time);
-
             // format the data
             data.forEach(function (d) {
                 d.availability_time = (parseTime(d.availability_time));
@@ -229,8 +261,12 @@ $(document).ready(() => {
             x.domain(d3.extent(data, function (d) {
                 return d.availability_time;
             }));
+            y.domain([0, d3.max(data, function (d) {
+                return Math.max(d.total_hour_percentage);
+            })]);
+            /*
             y.domain([d3.min(data, d=>d.total_hour_percentage), 
-                d3.max(data, d=>d.total_hour_percentage)]);
+                d3.max(data, d=>d.total_hour_percentage)]);*/
 
             // Add the valueline path.
             svg.append("path")
@@ -240,29 +276,31 @@ $(document).ready(() => {
             // Add the X Axis
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x).ticks(d3.time).tickFormat(d3.timeFormat('%H:%M')));
+                .call(d3.axisBottom(x).ticks(d3.timeHour.every(1)).tickFormat(d3.timeFormat('%H:%M')));
 
             // Add the Y Axis
             svg.append("g")
                 .call(d3.axisLeft(y));
         }
+
+        svgp.append('text')
+        .attr('class', 'title')
+        .attr('x', width / 2)
+        .attr('y', margin.top / 2)
+        .attr('text-anchor', 'middle')
+        .text('Overall performance of CAMs per hour by percentage(%): ');
+
         // Get the data
-         var perHourResult = "/perHourAvailabilities/" + defaultDate;
-        // console.log(perHourResult);
+        var perHourResult = "/perHourAvailabilities/" + defaultDate;
+        console.log(perHourResult);
 
         d3.json(perHourResult)
             .then((data) => {
                 draw(data);
             })
-            .catch((error)=>{
+            .catch((error) => {
                 console.log(error);
             });
-
-
-
-        console.log(perHourResult[0].availability_time); //shows 00:00:00
-
-        draw(perHourResult);
     });
     /* END OF LINE CHART */
 
@@ -291,9 +329,42 @@ $('#daterange').on('apply.daterangepicker', function (ev, picker) {
         })
     });
 
+    var mostDownRangedTerminal = "/mostDownTerminals/" + startDate + "/" + endDate;
+    console.log(mostDownRangedTerminal);
+    $(document).ready(()=>{
+        $.ajax({
+            url: (mostDownRangedTerminal),
+            method: "GET",
+            dataType: "json",
+            success:(data)=>{
+                $("#mostDown").html('');
+                $.each(data,(key,val)=>{
+                    $("#mostDown").append("<li>" + val.terminal_id + " - " + val.machine_name + "</li>");
+                })
+            }
+        })
+    });
+
+    var mostUpRangedTerminal = "/mostUpTerminals/" + startDate + "/" + endDate;
+    console.log(mostUpRangedTerminal);
+    $(document).ready(()=>{
+        $.ajax({
+            url: (mostUpRangedTerminal),
+            method: "GET",
+            dataType: "json",
+            success:(data)=>{
+                $("#mostUp").html('');
+                $.each(data,(key,val)=>{
+                    $("#mostUp").append("<li>" + val.terminal_id + " - " + val.machine_name + "</li>");
+                })
+            }
+        })
+    });
+
     $("#bar-chart").html('');
     $("#pieChart").html('');
     $("#lineChart").html('');
+   
 
     var HighAvailStaticUrl = "/highAvailabilities/" + startDate + "/" + endDate;
     console.log(HighAvailStaticUrl);
@@ -441,11 +512,11 @@ $('#daterange').on('apply.daterangepicker', function (ev, picker) {
         .catch((error) => {
             console.log(error);
         });
-        /* START OF LINE CHART */
+    /* START OF LINE CHART */
     $(document).ready(() => {
         // set the dimensions and margins of the graph
-        var margin = { top: 20, right: 20, bottom: 30, left: 50 },
-            width = 1300 - margin.left - margin.right,
+        var margin = { top: 40, right: 20, bottom: 30, left: 50 },
+            width = 1250 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         // parse the date / time
@@ -464,15 +535,15 @@ $('#daterange').on('apply.daterangepicker', function (ev, picker) {
         // append the svg obgect to the body of the page
         // appends a 'group' element to 'svg'
         // moves the 'group' element to the top left margin
-        var svg = d3.select("#lineChart").append("svg")
+        var svgp = d3.select("#lineChart").append("svg")
             .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+            .attr("height", height + margin.top + margin.bottom);
+
+
+        var svg = svgp.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         function draw(data) {
-
             // format the data
             data.forEach(function (d) {
                 d.availability_time = (parseTime(d.availability_time));
@@ -488,8 +559,12 @@ $('#daterange').on('apply.daterangepicker', function (ev, picker) {
             x.domain(d3.extent(data, function (d) {
                 return d.availability_time;
             }));
+            y.domain([0, d3.max(data, function (d) {
+                return Math.max(d.total_hour_percentage);
+            })]);
+            /*
             y.domain([d3.min(data, d=>d.total_hour_percentage), 
-                d3.max(data, d=>d.total_hour_percentage)]);
+                d3.max(data, d=>d.total_hour_percentage)]);*/
 
             // Add the valueline path.
             svg.append("path")
@@ -499,25 +574,31 @@ $('#daterange').on('apply.daterangepicker', function (ev, picker) {
             // Add the X Axis
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x).ticks(d3.time).tickFormat(d3.timeFormat('%H:%M')));
+                .call(d3.axisBottom(x).ticks(d3.timeHour.every(1)).tickFormat(d3.timeFormat('%H:%M')));
 
             // Add the Y Axis
             svg.append("g")
                 .call(d3.axisLeft(y));
         }
+
+        svgp.append('text')
+        .attr('class', 'title')
+        .attr('x', width / 2)
+        .attr('y', margin.top / 2)
+        .attr('text-anchor', 'middle')
+        .text('Availability (%) of CAM for date: '+ startDate + '-' + endDate);
+
         // Get the data
-         var perHourResult = "/perHourAvailabilities/"+ startDate + "/"+ endDate;
+        var perHourResult = "/perHourAvailabilities/" + startDate + "/" + endDate;
         console.log(perHourResult);
 
         d3.json(perHourResult)
             .then((data) => {
                 draw(data);
             })
-            .catch((error)=>{
+            .catch((error) => {
                 console.log(error);
             });
-
-        draw(perHourResult);
     });
     /* END OF LINE CHART */
 });

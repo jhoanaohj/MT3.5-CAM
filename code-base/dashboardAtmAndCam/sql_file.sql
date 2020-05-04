@@ -169,23 +169,7 @@ SET event_status = (array['UP', 'DOWN'])[(random() * 1+1)::int];
 INSERT INTO dashboard.event (terminal_id, operation_start_time, operation_end_time)
 SELECT terminal_id, operation_start, operation_end FROM dashboard.inventory
 
-CREATE TABLE dashboard.event
-(
-    event_id SERIAL,
-    terminal_id character varying(8),
-    event_status character varying(4),
-    event_start_time timestamp without time zone,
-    event_end_time timestamp without time zone,
-    event_start_adj timestamp without time zone,
-    event_end_adj timestamp without time zone,
-    event_description character varying(90),
-    event_duration_mins double precision,
-    operation_start_time time without time zone,
-    operation_end_time time without time zone,
-    planned character varying(10),
-    CONSTRAINT event_pkey PRIMARY KEY (event_id),
-    FOREIGN KEY(terminal_id) REFERENCES dashboard.inventory(terminal_id)
-)
+
 
 ALTER TABLE dashboard.down_event
 ALTER CONSTRAINT terminal_id FOREIGN KEY(terminal_id) REFERENCES dashboard.inventory(terminal_id);
@@ -204,77 +188,9 @@ UPDATE dashboard.event SET event_start_time = '2019-10-31 13:58:07', event_end_t
 
 SELECT terminal_id, operation_start, operation_end  FROM dashboard.inventory WHERE terminal_id = '07007001'
 
-CREATE TABLE dashboard.down_event
-(
-    id SERIAL,
-    terminal_id character varying(8),
-    event_description character varying(90),
-    down_date date,
-    down_time time without time zone,
-    down_duration_sec double precision
-)
-
-
 SELECT * FROM dashboard.event WHERE terminal_id = '07007001'
 
 UPDATE dashboard.event SET operation_start_time = '10:00:00', operation_end_time = '21:00:00'
-
---used to set operation_start and operation_end of inventory table to the operation_start_time and operation_end_time of event table
-UPDATE dashboard.event e
-    SET operation_start_time = i.operation_start,
-        operation_end_time = i.operation_end
-    FROM dashboard.inventory i
-    WHERE e.terminal_id = i.terminal_id;
-
---used to get the seconds in event_end_adj - event_start_adj
-SELECT EXTRACT(EPOCH FROM (SELECT event_end_adj FROM dashboard.event WHERE terminal_id = '07007001')::timestamp - (SELECT event_start_adj FROM dashboard.event WHERE terminal_id = '07007001')::timestamp) AS seconds
-
---used to get the date
-SELECT event_start_adj::TIMESTAMP::DATE FROM dashboard.event WHERE terminal_id = '07007001'
-
---used to get the time only
-SELECT	event_start_adj::TIMESTAMP::TIME FROM dashboard.event WHERE terminal_id = '07007001'
-
---randomizer to input/update data in the table via randomizing it
-UPDATE dashboard.event de
-SET event_description = (array['ATM OUT OF SERVICE', 'ATM BEING SERVICE', 'NETWORK CONNECTION LOST', 'BLACKSCREEN', 'TMD ERROR', 'POSSIBLE COMMUNICATION KEY ERROR ON ATM'])[(random() * 5 + 1)::int] WHERE de.terminal_id IN (SELECT di.terminal_id FROM dashboard.inventory di WHERE di.machine_type = 'ATM');
-
---used to insert random pk from inventory table to event table
-INSERT into dashboard.event (terminal_id) 
-SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM' ORDER BY random() limit 100
-
---used to UPDATE down_event table
---note to UPDATE will experiment on INSERT once event_start_adj and event_end_adj on event table is populated
-UPDATE dashboard.down_event SET down_date = (SELECT event_start_adj::TIMESTAMP::DATE FROM dashboard.event WHERE terminal_id = '07007001'), down_duration_sec = (SELECT EXTRACT(EPOCH FROM(SELECT event_end_adj FROM dashboard.event WHERE terminal_id='07007001')::timestamp - (SELECT event_start_adj FROM dashboard.event WHERE terminal_id = '07007001')::timestamp)),
-down_time = (SELECT	event_start_adj::TIMESTAMP::TIME FROM dashboard.event WHERE terminal_id = '07007001')
-
---update the event_end_adj in the interval of 1 hour between the event_start_adj and event_end_adj
-UPDATE dashboard.event SET event_end_adj = event_start_adj + make_interval(mins => (random() * 59)::int) WHERE event_id = 2066 
-
---get all the data that is UNPLANNED AND DOWN where the machine_type is 'CAM'
-SELECT * FROM dashboard.event WHERE terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM') AND PLANNED = 'UNPLANNED' AND event_status = 'DOWN'
-
---code to use populate date on event_start_adj
-UPDATE dashboard.event SET event_start_adj = '2020-01-01  00:00:00'::timestamp + date_trunc('second',(random() * ('2020-04-16 23:59:59'::timestamp - '2020-01-01 00:00:00'::timestamp)))
-
---query to update event_star_time and event_end_time = to event_start_adj and event_end_adj
-UPDATE dashboard.event SET event_start_time = event_start_adj, event_end_time = event_end_adj WHERE terminal_ID in (SELECT terminal_id FROM dashboard.inventory)
-
---QUERY to get the minutes(event_end_adj - event_start_adj)
-UPDATE dashboard.event SET event_duration_mins = (DATE_PART('day', event_end_adj::timestamp - event_start_adj::timestamp) * 24 + 
-               DATE_PART('hour', event_end_adj::timestamp - event_start_adj::timestamp)) * 60 +
-               DATE_PART('minute', event_end_adj::timestamp - event_start_adj::timestamp);
-
---CODE to insert all the needed data for the down_event table
-INSERT INTO dashboard.down_event(terminal_id, event_description, down_date, down_time, down_duration_sec)
-SELECT terminal_id, event_description,
-       event_start_adj::TIMESTAMP::DATE AS date, 
-       event_start_adj::TIMESTAMP::TIME AS time,
-       (EXTRACT(EPOCH FROM event_end_adj::TIMESTAMP) -
-        EXTRACT(EPOCH FROM event_start_adj::TIMESTAMP)
-       ) AS seconds
-FROM dashboard.event
-WHERE event_status = 'DOWN' AND planned = 'UNPLANNED'
 
 INSERT INTO dashboard.availability(terminal_id, availability_date, availability_time)
 select td.terminal_id, td.down_date, (hh * interval '1 hour')::time
@@ -307,16 +223,6 @@ from (select distinct terminal_id, down_date
      ) td cross join
      generate_series(0, 23) gs(hh);
 	 
-CREATE TABLE dashboard.availability
-(
-    terminal_id character varying(8),
-    availability_date date,
-    availability_time time without time zone,
-    duration_sec numeric(8,2),
-    availability_percentage numeric(8,2),
-    in_opt_hrs boolean,
-    CONSTRAINT availability_pkey PRIMARY KEY (terminal_id, availability_date, availability_time)
-)
 
 UPDATE dashboard.availability SET duration_sec = 3600, availability_percentage = 100, in_opt_hrs = TRUE
 
@@ -398,7 +304,6 @@ from (select distinct terminal_id, down_date
      ) td cross join
      generate_series(0, 23) gs(hh);
 
---adsfadsf
 SELECT * FROM dashboard.availability WHERE terminal_id = '38560100'
 SELECT * FROM dashboard.availability WHERE duration_sec = 3600 and availability_percentage < 100
 
@@ -552,29 +457,28 @@ SELECT event_description, COUNT(*) AS error_count
 					 AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')
 					 GROUP BY event_description ORDER BY error_count DESC
 
-
+--COMPARING 2 TABLE RESULT
 SELECT
-    (
-	    SELECT ROUND(AVG(availability_percentage),2) AS average_up_time_percentage
-		FROM dashboard.availability 
-		WHERE availability_percentage >= 95 
-		AND availability_date BETWEEN ?1 AND ?2
-		AND terminal_id IN 
-		(
-			SELECT terminal_id 
-			FROM dashboard.inventory 
-			WHERE machine_type = 'CAM'
-		)
-    ),
-    (
-        SELECT ROUND(AVG(availability_percentage),2) AS average_down_time_percentage
-        FROM dashboard.availability 
-        WHERE availability_percentage < 95 
-        AND availability_date BETWEEN ?1 AND ?2
-        AND terminal_id IN 
-		(
-			SELECT terminal_id 
-			FROM dashboard.inventory 
-			WHERE machine_type = 'CAM'
-		)
-    )
+    ROUND(AVG(availability_percentage)
+       FILTER (WHERE availability_date BETWEEN '2020-03-01' AND '2020-04-01') , 2) AS avg_march,
+    ROUND(AVG(availability_percentage)
+       FILTER (WHERE availability_date BETWEEN '2020-04-01' AND '2020-05-01'), 2) AS avg_april
+FROM dashboard.availability
+WHERE availability_date BETWEEN '2020-03-01' AND '2020-05-01';
+
+--gets the total availability time of the machine for each hour
+SELECT da.availability_time, (ROUND(AVG(da.availability_percentage),2)) AS total_hour_percentage
+FROM dashboard.availability da
+INNER JOIN dashboard.inventory di ON da.terminal_id = di.terminal_id
+WHERE di.machine_type = 'CAM'
+AND da.availability_date BETWEEN '2020-03-01' AND '2020-04-01'
+GROUP BY da.availability_time 
+ORDER BY da.availability_time ASC
+
+-- top 5 low availability percentage CAM
+SELECT terminal_id, ROUND(AVG(availability_percentage),2) AS availability_each_terminal
+FROM dashboard.availability
+WHERE availability_date = '2020-04-05'
+AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')
+GROUP BY terminal_id
+ORDER BY availability_each_terminal ASC LIMIT 5

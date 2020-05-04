@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 					+ "FROM dashboard.down_event "
 					+ "WHERE down_date = ?1 "
 					+ "AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')"
-					+ "GROUP BY event_description ORDER BY error_count DESC",
+					+ "GROUP BY event_description ORDER BY error_count DESC LIMIT 5",
 			resultSetMapping = "topDownResult"
 			),
 	@NamedNativeQuery(
@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 					+ "FROM dashboard.down_event "
 					+ "WHERE down_date BETWEEN ?1 AND ?2 "
 					+ "AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')"
-					+ "GROUP BY event_description ORDER BY error_count DESC",
+					+ "GROUP BY event_description ORDER BY error_count DESC LIMIT 5",
 			resultSetMapping = "topDownResult"
 			)
 })

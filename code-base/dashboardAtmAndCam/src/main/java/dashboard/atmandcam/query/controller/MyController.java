@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dashboard.atmandcam.model.AvailabilityPerHourLineChart;
 import dashboard.atmandcam.model.HighAvailabilityCam;
+import dashboard.atmandcam.model.MostDownTerminals;
+import dashboard.atmandcam.model.MostUpTerminals;
 import dashboard.atmandcam.model.MyModel;
 import dashboard.atmandcam.model.Top5Downtime;
 import dashboard.atmandcam.repo.HighAvailabilitiesRepo;
+import dashboard.atmandcam.repo.MostDownTerminalsRepo;
+import dashboard.atmandcam.repo.MostUpTerminalsRepo;
 import dashboard.atmandcam.repo.MyRepo;
 import dashboard.atmandcam.repo.PerHourAvailabilityLineRepo;
 import dashboard.atmandcam.repo.Top5DowntimeRepo;
@@ -30,6 +34,12 @@ public class MyController {
 	
 	@Autowired
 	private PerHourAvailabilityLineRepo perHourAvailabilityLineRepo;
+	
+	@Autowired
+	private MostDownTerminalsRepo mostDownTerminalRepo;
+	
+	@Autowired
+	private MostUpTerminalsRepo mostUpTerminalsRepo;
 	
 	
 	@GetMapping("/queries/")
@@ -77,4 +87,23 @@ public class MyController {
 		return perHourAvailabilityLineRepo.getDefaultPerHourResult(defaultDate);
 	}
 	
+	@GetMapping("/mostDownTerminals/{defaultDate}")
+	public List<MostDownTerminals> getDefaultMostDownTerminals(@PathVariable java.sql.Date defaultDate){
+		return mostDownTerminalRepo.getDefaultDownTerminals(defaultDate);
+	}
+	
+	@GetMapping("/mostDownTerminals/{startDate}/{endDate}")
+	public List<MostDownTerminals> getRangedtMostDownTerminals(@PathVariable java.sql.Date startDate, @PathVariable java.sql.Date endDate){
+		return mostDownTerminalRepo.getRangedDownTerminals(startDate,endDate);
+	}
+	
+	@GetMapping("/mostUpTerminals/{defaultDate}")
+	public List<MostUpTerminals> getDefaultMostUpTerminals(@PathVariable java.sql.Date defaultDate){
+		return mostUpTerminalsRepo.getDefaultUpTerminals(defaultDate);
+	}
+	
+	@GetMapping("/mostUpTerminals/{startDate}/{endDate}")
+	public List<MostUpTerminals> getRangedtMostUpTerminals(@PathVariable java.sql.Date startDate, @PathVariable java.sql.Date endDate){
+		return mostUpTerminalsRepo.getRangedUpTerminals(startDate,endDate);
+	}
 }
