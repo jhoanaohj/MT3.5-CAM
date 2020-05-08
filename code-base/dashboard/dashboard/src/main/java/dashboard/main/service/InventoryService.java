@@ -12,7 +12,9 @@ public interface InventoryService {
     Optional<InventoryEntity> findOne(String terminalId);
 
     InventoryEntity save(InventoryEntity entity);
-    
-    
+
+    boolean decommission(String terminalId);
+
+    boolean update(String terminalId);
 
 }

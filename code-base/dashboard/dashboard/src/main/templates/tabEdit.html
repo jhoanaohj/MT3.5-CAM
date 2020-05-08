@@ -7,13 +7,72 @@
             e.preventDefault()
             $(this).tab('show')
         });
+
+        function refreshContents(terminalId) {
+            $.ajax({
+                url: "./tabEdit/" + terminalId,
+                method: "GET",
+                contentType: "text/plain",
+                async: false,
+                success: function (data) {
+                    $("#profileModal .modal-body").html(data);
+                },
+                error: function () {
+                    debugger;
+                    alert("Ajax error, unable to refresh contents!");
+                },
+            });
+        }
+
+        function decommission() {
+            let terminalId = $("#terminalIdInput").val();
+            $.ajax({
+                url: "/decommission",
+                method: "POST",
+                data: {
+                    terminalId: terminalId
+                },
+                dataType: 'text',
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.status)
+                    console.log(errorThrown)
+                    alert("Ajax error, unable to decommission selected machine!")
+                }
+            }).done(function (response) { //
+                refreshContents(terminalId);
+                $("#server-results").html(response);
+            });
+        }
+
+        $("#tabEditForm").submit(function (event) {
+            event.preventDefault(); //prevent default action
+            let post_url = $(this).attr("action"); //get form action url
+            let request_method = $(this).attr("method"); //get form GET/POST method
+            let form_data = $(this).serialize(); //Encode form elements for submission
+
+            let terminalId = $("#terminalIdInput").val();
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data,
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.status)
+                    console.log(errorThrown)
+                    alert("Ajax error, unable to submit form!")
+                }
+            }).done(function (response) { //
+                console.log("Form submitted.")
+                refreshContents(terminalId);
+                $("#server-results").html(response);
+            });
+        });
     </script>
 </head>
 
 <body>
 <div class="container">
 
-    <form action="/tabEdit" class="form-group" method="post" th:action="@{/tabEdit}">
+    <form class="form-group" id="tabEditForm" method="post" th:action="@{/tabEdit}" th:object="${inventory}">
         <div class="container border-1">
             <div class="row">
                 <ul class="nav nav-tabs" id="profileTab" role="tablist">
@@ -57,7 +116,7 @@
                 <div aria-labelledby="tab1" class="tab-pane active" id="tab1-tab" role="tabpanel">
                     <div class="form-group">
                         <label>Terminal ID</label>
-                        <input class="form-control" readonly th:field="${inventory.terminalId}"/>
+                        <input class="form-control" id="terminalIdInput" th:field="${inventory.terminalId}"/>
                         <label>Machine Name</label>
                         <input class="form-control" th:field="${inventory.machineName}" type="text"/>
                         <label>Machine Type</label>
@@ -175,7 +234,7 @@
                         <label>Warranty Begin</label>
                         <input class="form-control" th:field="${inventory.warrantyBegin}" type="date"/>
                         <label>Warranty End</label>
-                        <input class="form-control" th:field="${inventory.warrantyEnd}" type="text"/>
+                        <input class="form-control" th:field="${inventory.warrantyEnd}" type="date"/>
                         <label>Service Provider</label>
                         <input class="form-control" th:field="${inventory.serviceProvider}" type="text"/>
                         <label>Battery Serial Number</label>
@@ -203,15 +262,15 @@
                         <label>ESDMS Installed</label>
                         <input class="form-control" th:field="${inventory.esdmsInstalled}" type="text"/>
                         <label>ESDMS Date</label>
-                        <input class="form-control" th:field="${inventory.esdmsDate}" type="date"/>
+                        <input class="form-control" th:field="${inventory.esdmsDate}" type="text"/>
                         <label>CPP Installed</label>
                         <input class="form-control" th:field="${inventory.cppInstalled}" type="text"/>
                         <label>CPP Date</label>
-                        <input class="form-control" th:field="${inventory.cppDate}" type="date"/>
+                        <input class="form-control" th:field="${inventory.cppDate}" type="text"/>
                         <label>TMD Installed</label>
                         <input class="form-control" th:field="${inventory.tmdInstalled}" type="text"/>
                         <label>TMD Date</label>
-                        <input class="form-control" th:field="${inventory.tmdDate}" type="date"/>
+                        <input class="form-control" th:field="${inventory.tmdDate}" type="text"/>
                     </div>
                 </div>
                 <div aria-labelledby="tab8" class="tab-pane" id="tab8-tab" role="tabpanel">
@@ -249,7 +308,8 @@
                         <label>C Encrypting Pin Pad Firmware Type</label>
                         <input class="form-control" th:field="${inventory.cEncryptingPinPadFirmwareType}" type="text"/>
                         <label>C Encrypting Pin Pad Firmware Serial Number</label>
-                        <input class="form-control" th:field="${inventory.cEncryptingPinPadFirmwareSerialNumber}" type="text"/>
+                        <input class="form-control" th:field="${inventory.cEncryptingPinPadFirmwareSerialNumber}"
+                               type="text"/>
                         <label>C Encrypting Pin Pad</label>
                         <input class="form-control" th:field="${inventory.cEncryptingPinPad}" type="text"/>
                         <label>C Remote Status Monitor</label>
@@ -283,8 +343,8 @@
                     </div>
                 </div>
                 <div aria-labelledby="tab11" class="tab-pane" id="tab11-tab" role="tabpanel">
-                	<div class="form-group">
-                    	<label>C Power Box Concealing Padlock</label>
+                    <div class="form-group">
+                        <label>C Power Box Concealing Padlock</label>
                         <input class="form-control" th:field="${inventory.cPowerBoxConcealingPadlock}" type="text"/>
                         <label>C Cassette</label>
                         <input class="form-control" th:field="${inventory.cCassettes}" type="text"/>
@@ -292,11 +352,13 @@
                         <input class="form-control" th:field="${inventory.cSampleMbtcAtmCard}" type="text"/>
                         <label>HDD Capacity</label>
                         <input class="form-control" th:field="${inventory.hddCapacity}" type="text"/>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="submit" value="Submit">Save</button>
+        <div id="server-results"></div>
+        <button class="btn btn-primary" onclick="update()" type="submit">Update</button>
+        <button class="btn btn-secondary" onclick="decommission()" type="button">Decommission</button>
     </form>
 </div>
 </body>
