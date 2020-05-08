@@ -28,3 +28,17 @@ code-base/dashboard/dashboard/src/main/java/dashboard/main/model/TabEntity.java
 code-base/dashboard/dashboard/src/main/java/dashboard/main/model/EntityInventory.java
 code-base/dashboard/dashboard/src/main/java/dashboard/main/Controller/AppController.java
 code-base/dashboard/*
+code-base/dashboard/dashboard/src/main/java/dashboard/main/repository/RepositoryInventory.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity9.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity8.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity7.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity6.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity5.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity4.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity3.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity2.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity11.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity10.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/TabEntity.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/Model/EntityInventory.java
+code-base/dashboard/dashboard/src/main/java/dashboard/main/controller/AppController.java
