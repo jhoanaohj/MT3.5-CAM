@@ -1,6 +1,9 @@
 package dashboard.main.model;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.DynamicUpdate;
+
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;

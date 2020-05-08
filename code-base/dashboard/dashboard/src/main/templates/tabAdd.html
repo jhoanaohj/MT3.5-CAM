@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        $('#profileTab a').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+        
+        $("#tabAddForm").submit(function (event) {
+            event.preventDefault(); //prevent default action
+            let post_url = $(this).attr("action"); //get form action url
+            let request_method = $(this).attr("method"); //get form GET/POST method
+            let form_data = $(this).serialize(); //Encode form elements for submission
+
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data
+            }).done(function (response) { //
+                debugger
+                $("#server-results").html(response);
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="container">
+
+    <form class="form-group" id="tabEditForm" method="post" th:action="@{/tabEdit}" th:object="${inventory}">
+        <div class="container border-1">
+            <div class="row">
+                <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#tab1-tab" id="tab1">Tab 1</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div aria-labelledby="tab1" class="tab-pane active" id="tab1-tab" role="tabpanel">
+                    <div class="form-group">
+                        <label>Terminal ID</label>
+                        <input class="form-control" th:field="${inventory.terminalId}"/>
+                        <label>Machine Name</label>
+                        <input class="form-control" th:field="${inventory.machineName}" type="text"/>
+                        <label>Machine Type</label>
+                        <input class="form-control" th:field="${inventory.machineType}" type="text"/>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="server-results"></div>
+        <button class="btn btn-primary" type="submit" value="Submit">Save</button>
+    </form>
+</div>
+</body>
+
+</html>
