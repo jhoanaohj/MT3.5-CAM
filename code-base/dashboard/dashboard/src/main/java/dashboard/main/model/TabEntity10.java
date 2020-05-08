@@ -1,4 +1,4 @@
-package dashboard.main.model;
+package dashboard.main.Model;
 
 import javax.persistence.*;
 

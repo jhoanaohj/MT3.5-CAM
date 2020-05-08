@@ -53,9 +53,9 @@ $(document).ready(() => {
 
         console.log("Using moment() " + momentDefault);
 
-        var startWeek = moment(defaultDate).startOf('isoWeek'); //starts at monday
+        var startWeek = momentDefault.startOf('isoWeek'); //starts at monday
         console.log("startweek" + startWeek);
-        var endWeek = moment(defaultDate).endOf('isoWeek'); //ends at sunday
+        var endWeek = momentDefault.endOf('isoWeek'); //ends at sunday
 
         var dateStartObject = new Date(startWeek.format("YYYY-MM-DD"));
         var dateEndObject = new Date(endWeek.format("YYYY-MM-DD"));
