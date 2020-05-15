@@ -260,11 +260,11 @@ body {
     font-size: 10px;
   }
 
-#pieChart {
+#pieChart, #pieChart2 {
     min-height: 18rem;
 }
 
-#pieChart svg {
+#pieChart svg, #pieChart2 svg {
     overflow: visible;
 }
 
@@ -302,4 +302,8 @@ input {
   padding: 10px;
   text-align: left;
   margin-left: 10px;
+}
+
+.bootstrap-datetimepicker-widget tr:hover {
+  background-color: #808080;
 }

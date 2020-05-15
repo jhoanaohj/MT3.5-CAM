@@ -482,3 +482,68 @@ WHERE availability_date = '2020-04-05'
 AND terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')
 GROUP BY terminal_id
 ORDER BY availability_each_terminal ASC LIMIT 5
+
+--uses the result and creates a dummy row (CAN BE USED IN COMPARING MONTHS)
+SELECT
+   unnest(array['avg_march', 'avg_april']) AS months,
+   unnest(array[avg_march, avg_april]) AS values
+FROM(
+	SELECT
+		ROUND(AVG(availability_percentage)
+		   FILTER (WHERE availability_date BETWEEN '2020-03-01' AND '2020-04-01') , 2) AS avg_march,
+		ROUND(AVG(availability_percentage)
+		   FILTER (WHERE availability_date BETWEEN '2020-04-01' AND '2020-05-01'), 2) AS avg_april
+	FROM dashboard.availability
+WHERE availability_date BETWEEN '2020-03-01' AND '2020-05-01'
+	)t
+
+    SELECT event_description,COUNT(*) FROM dashboard.down_event
+WHERE down_date = '2020-04-06'
+group by event_description
+ORDER BY count DESC
+
+SELECT event_description,COUNT(*) FROM dashboard.down_event
+WHERE down_date BETWEEN '2020-04-05' AND '2020-04-15'
+group by event_description
+ORDER BY count DESC
+
+--DAILY
+--gets the availability per date
+SELECT availability_date, ROUND(AVG(availability_percentage),2)
+FROM dashboard.availability
+WHERE terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')
+AND availability_date BETWEEN '2020-04-05' AND '2020-04-15'
+GROUP BY availability_date
+
+--gets the event count per date
+SELECT down_date, event_description, COUNT(*)
+FROM dashboard.down_event
+WHERE terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')
+AND down_date BETWEEN '2020-04-05' AND '2020-04-15'
+GROUP BY event_description, down_date
+ORDER BY down_date DESC
+
+--getst the total count
+SELECT event_description, COUNT(*)
+FROM dashboard.down_event
+WHERE terminal_id IN (SELECT terminal_id FROM dashboard.inventory WHERE machine_type = 'CAM')
+AND down_date BETWEEN '2020-04-05' AND '2020-04-15'
+GROUP BY event_description
+ORDER BY count DESC
+
+--uses the result and creates a dummy row (CAN BE USED IN COMPARING MONTHS) COMPARING AVAILABILITY
+SELECT
+   unnest(array['last_Month', 'curr_Month', 'next_Month']) AS months,
+   unnest(array[lastMonth, currMonth, nextMonth]) AS values
+FROM(
+	SELECT
+		ROUND(AVG(availability_percentage)
+		   FILTER (WHERE availability_date BETWEEN '2020-02-01' AND '2020-02-29') , 2) AS lastMonth,
+		ROUND(AVG(availability_percentage)
+		   FILTER (WHERE availability_date BETWEEN '2020-03-01' AND '2020-03-31'), 2) AS currMonth,
+		ROUND(AVG(availability_percentage)
+			 FILTER(WHERE availability_date BETWEEN '2020-04-01' AND '2020-04-30'),2) AS nextMonth
+	FROM dashboard.availability
+	)t
+
+    

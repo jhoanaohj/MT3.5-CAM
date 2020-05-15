@@ -10,21 +10,26 @@
     <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="src/dateranger/daterangepicker.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
     <!--own css-->
     <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/style.scss">-->
 
     <!--lib js-->
     <!--jquery js-->
     <script src="src/jquery.js"></script>
-    <!--moment.js
-    <script src="src/moment.js"></script>-->
-    <!--daterangepicker js-->
-    <script src="src/dateranger/moment.min.js"></script>
-    <script src="src/dateranger/daterangepicker.js"></script>
-    <!--fontawesome js-->
-    <script src="src/fontawesome/js/all.min.js"></script>
     <!--bootstrap js-->
     <script src="src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--moment.js-->
+    <script src="src/moment.js"></script>
+    <!--daterangepicker js and datetimepicker js
+    <script src="src/dateranger/moment.min.js"></script>-->
+    <script src="src/dateranger/daterangepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+    <!--fontawesome js-->
+    <script src="src/fontawesome/js/all.min.js"></script>
+    
 
     <!--d3(chart) js-->
     <script src="src/d3.min.js"></script>
@@ -33,18 +38,6 @@
 
 <body>
     <div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <img src="rsc/mblogo.png" alt="" width="50" height="50">
-            </div>
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="/">CAM DASHBOARD</a>
-                </li>
-            </ul>
-            <!--End of nav.sidebar-->
-        </nav>
 
         <!--Page content-->
         <div id="content">
@@ -60,16 +53,18 @@
             <div class="container-fluid content-header">
                     <form class="form-inline">
                         <div class="form-row">
-                            <div class="form-group">
-                                <i class="fas fa-calendar calendar"></i>
-                                <input type="text" id="daterange" class="form-control" style="cursor: pointer;">
+                            <div class="form-group" id = "divDateRange">
+                                <!--<em class="fas fa-calendar calendar"></em>
+                                <input type="text" id="daterange" class="form-control" style="cursor: pointer;">-->
                             </div>
                             <div class="form-group">
                                 <select id="" class="form-control userChoice col-md-16">
-                                    <option value = 0 selected>Summary</option>
-                                    <option value = 1>Daily</option>
-                                    <option value = 2>Weekly</option>
-                                    <option value = 3>Monthly</option>
+                                    <option value = 0 selected>Default</option>
+                                    <option value = 1>Summary</option>
+                                    <option value = 2>Daily</option>
+                                    <option value = 3>Weekly</option>
+                                    <option value = 4>Monthly</option>
+                                    <option value = 5>Custom</option>
                                 </select>
                             </div>
                         </div>
@@ -140,10 +135,10 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-5">
-                        <div class="card shadow mb-4">
+                    <div class="col-md-6">
+                        <div class="card shadow mb-3">
                             <h5 class="card-header">
-                                Pie Chart
+                                Planned vs Unplanned Event
                             </h5>
                             <div class="card-body">
                                 <div id="pieChart"></div>
@@ -151,17 +146,40 @@
                         </div>
                     </div>
 
-                    <div class="col-md-7">
-                        <div class="card shadow mb-4">
+                    <div class="col-md-6">
+                        <div class="card shadow mb-3">
                             <h5 class="card-header">
-                                CAM Hotspot
+                                Downtime vs Uptime
                             </h5>
                             <div class="card-body">
-                                <div></div>
+                                <div id="pieChart2"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow mb-5">
+                            <div class="card-body">
+                                <div id="barChart2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow mb-5">
+                            <div class="card-body">
+                                <div id="barChart3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END OF div.row-->
                 <!--END OF div.row-->
             </div>
             <!--End of div.content-->
@@ -172,8 +190,9 @@
         <!--Lib <script>-->
 
 
-        <!--own <script>-->
-        <script src="js/script.js"></script>
+        <!--own <script>
+        <script src="js/script.js"></script>-->
+        <script src="js/functions.js"></script>
         <script src="js/datePicker.js"></script>
         <script src="js/sidebarScript.js"></script>
 

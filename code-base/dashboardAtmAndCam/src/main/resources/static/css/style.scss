@@ -1,0 +1,14 @@
+/* Highlight different color whole week/row */
+#weekpicker .datepicker table tr.active {
+    background: #FF3B30;
+    /* and each day in that row */
+    td.day {
+      background: #FF3B30;
+      color: #000000;
+    }
+  }
+  /* Highlight selected hovered row instead of only hovered day */
+  #weekpicker .datepicker table tr:hover td.day {
+    background: #8A8A8F;
+    color: #fff;
+  }

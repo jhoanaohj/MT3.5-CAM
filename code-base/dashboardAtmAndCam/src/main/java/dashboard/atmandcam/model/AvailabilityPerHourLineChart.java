@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 				+ "	GROUP BY da.availability_time \r\n"
 				+ "ORDER BY da.availability_time ASC", 
 				resultSetMapping = "perHourResultLine"),
+		
 		@NamedNativeQuery(name = "GetDefaultHourResultLine.getData", 
 		query = "SELECT da.availability_time, (ROUND(AVG(da.availability_percentage),2)) AS total_hour_percentage\r\n"
 				+ "	FROM dashboard.availability da\r\n"
