@@ -25,9 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 						"FROM(\r\n" + 
 						"	SELECT\r\n" + 
 						"		ROUND(AVG(da.availability_percentage)\r\n" + 
-						"		  	FILTER (WHERE da.availability_date = ?1 AND duration_sec < 3600) , 2) AS downtime_percent,\r\n" + 
-						"		100 - ROUND(AVG(da.availability_percentage)\r\n" + 
-						"		  	FILTER (WHERE da.availability_date = ?1 AND duration_sec < 3600), 2) AS uptime_percent\r\n" + 
+						"		  	FILTER (WHERE da.availability_date = ?1 AND duration_sec < 3600 AND availability_percentage < 95) , 2) AS downtime_percent,\r\n" + 
+						"		ROUND(AVG(da.availability_percentage)\r\n" + 
+						"		  	FILTER (WHERE da.availability_date = ?1 AND duration_sec < 3600 AND availability_percentage >= 95), 2) AS uptime_percent\r\n" + 
 						"	FROM dashboard.availability da\r\n" + 
 						"	)t", 
 				resultSetMapping = "upDownPercentValues"),
@@ -39,9 +39,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 				"FROM(\r\n" + 
 				"	SELECT\r\n" + 
 				"		ROUND(AVG(da.availability_percentage)\r\n" + 
-				"		  	FILTER (WHERE da.availability_date BETWEEN ?1 AND ?2 AND duration_sec < 3600) , 2) AS downtime_percent,\r\n" + 
-				"		100 - ROUND(AVG(da.availability_percentage)\r\n" + 
-				"		  	FILTER (WHERE da.availability_date BETWEEN ?1 AND ?2 AND duration_sec < 3600), 2) AS uptime_percent\r\n" + 
+				"		  	FILTER (WHERE da.availability_date BETWEEN ?1 AND ?2 AND duration_sec < 3600 AND availability_percentage < 95) , 2) AS downtime_percent,\r\n" + 
+				"		ROUND(AVG(da.availability_percentage)\r\n" + 
+				"		  	FILTER (WHERE da.availability_date BETWEEN ?1 AND ?2 AND duration_sec < 3600 AND availability_percentage >= 95), 2) AS uptime_percent\r\n" + 
 				"	FROM dashboard.availability da\r\n" + 
 				"	)t", 
 				resultSetMapping = "upDownPercentValues") 

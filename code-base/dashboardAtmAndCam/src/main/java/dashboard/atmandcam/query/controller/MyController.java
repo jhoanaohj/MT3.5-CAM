@@ -16,6 +16,7 @@ import dashboard.atmandcam.model.MostDownTerminals;
 import dashboard.atmandcam.model.MostUpTerminals;
 import dashboard.atmandcam.model.MyModel;
 import dashboard.atmandcam.model.PlannedUnplannedEventCount;
+import dashboard.atmandcam.model.TestModel;
 import dashboard.atmandcam.model.Top5Downtime;
 import dashboard.atmandcam.repo.AvailabilityPerMonthRepo;
 import dashboard.atmandcam.repo.AvailabilityPerRegionRepo;
@@ -26,6 +27,7 @@ import dashboard.atmandcam.repo.MostUpTerminalsRepo;
 import dashboard.atmandcam.repo.MyRepo;
 import dashboard.atmandcam.repo.PerHourAvailabilityLineRepo;
 import dashboard.atmandcam.repo.PlannedUnplannedEventCountRepo;
+import dashboard.atmandcam.repo.TestModelRepo;
 import dashboard.atmandcam.repo.Top5DowntimeRepo;
 
 @RestController
@@ -61,6 +63,19 @@ public class MyController {
 	@Autowired
 	private DownUptimeComparisonRepo downUptimeComparisonRepo;
 	
+	@Autowired
+	private TestModelRepo testModelRepo;
+	
+	
+	@GetMapping("/testresult/{startDate}")
+	public List<TestModel> getTestSingleResult(@PathVariable java.sql.Date startDate){
+		return testModelRepo.getTestSingleResult(startDate);
+	}
+	
+	@GetMapping("/testresult/{startDate}/{endDate}")
+	public List<TestModel> getTestSingleResult(@PathVariable java.sql.Date startDate, @PathVariable java.sql.Date endDate){
+		return testModelRepo.getTestRangedResult(startDate, endDate);
+	}
 	
 	@GetMapping("/queries/")
 	public List<MyModel> getResult(){

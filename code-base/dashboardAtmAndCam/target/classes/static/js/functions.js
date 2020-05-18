@@ -1,5 +1,6 @@
 function defaultLoad(defaultDate) {
 
+    $("#divDateRange").html('');
     $("#bar-chart").html('');
     $("#pieChart").html('');
     $("#lineChart").html('');
@@ -64,6 +65,7 @@ function defaultLoad(defaultDate) {
 
     d3.json(defaultHighAvailStaticUrl)
         .then((data) => {
+
             //console.log(data);
 
             const svgContainer = d3.select('#bar-chart')
@@ -158,7 +160,7 @@ function defaultLoad(defaultDate) {
     /** START OF PIE CHART */
     $(document).ready(() => {
         var plannedVsUnplannedURL = "/plannedvsunplanned/" + defaultDate;
-        //console.log(plannedVsUnplannedURL);
+        console.log(plannedVsUnplannedURL);
         d3.json(plannedVsUnplannedURL)
             .then((data) => {
 
@@ -207,7 +209,7 @@ function defaultLoad(defaultDate) {
                     })
                     .attr("text-anchor", "middle")
                     .text((d) => {
-                        return d.data.result;
+                        return d.data.result + "%";
                     });
 
                 var legendG = g.selectAll(".legend")
@@ -508,8 +510,6 @@ function defaultLoad(defaultDate) {
 
         // Get the data
         var plannedVsUnplannedBar = "/unplannedResult/" + defaultDate;
-        //console.log(perHourResult);
-
         d3.json(plannedVsUnplannedBar)
             .then((data) => {
                 // set the dimensions and margins of the graph
@@ -798,7 +798,7 @@ function dailyLoad(dailyDate) {
                     })
                     .attr("text-anchor", "middle")
                     .text((d) => {
-                        return d.data.result;
+                        return d.data.result + "%";
                     });
 
                 var legendG = g.selectAll(".legend")
@@ -1178,23 +1178,26 @@ function dailyLoad(dailyDate) {
     /* END OF HORIZONTAL LINE CHART */
 }
 
-//bookmark3 
-function weeklyLoadRange(startDate, endDate) {
-    var getFirstDayWeek = startDate;
-    var getLastDayWeek = endDate;
-    console.clear();
+// //bookmark3 
+// function weeklyLoadRange(startDate, endDate) {
+//     var getFirstDayWeek = startDate;
+//     var getLastDayWeek = endDate;
+//     console.clear();
 
-    console.log(getFirstDayWeek);
-    console.log(getLastDayWeek);
+//     console.log(getFirstDayWeek);
+//     console.log(getLastDayWeek);
 
-    $("#bar-chart").html('');
-    $("#pieChart").html('');
-    $("#lineChart").html('');
-    $('#top5Downtime').html('');
-    $("#mostDown").html('');
-    $("#mostUp").html('');
+//     $("#bar-chart").html('');
+//     $("#pieChart").html('');
+//     $("#lineChart").html('');
+//     $('#top5Downtime').html('');
+//     $("#mostDown").html('');
+//     $("#mostUp").html('');
+//     $("#pieChart2").html('');
+//     $("#barChart2").html('');
+//     $("#barChart3").html('');
 
-} //END OF FUNCTION WEEKLY LOAD RANGE
+// } //END OF FUNCTION WEEKLY LOAD RANGE
 
 //bookmark4
 function rangeLoad(startDate, endDate) {
@@ -1406,7 +1409,7 @@ function rangeLoad(startDate, endDate) {
                     })
                     .attr("text-anchor", "middle")
                     .text((d) => {
-                        return d.data.result;
+                        return d.data.result + "%";
                     });
 
                 var legendG = g.selectAll(".legend")
@@ -1788,7 +1791,7 @@ function rangeLoad(startDate, endDate) {
 
 //bookmark5 monthView
 function monthlyLoad(lastMonStartDate, lastMonEndDate, currMonStartDate, currMonEndDate, nextMonStartDate, nextMonEndDate) {
-
+    
     $("#bar-chart").html('');
     $("#pieChart").html('');
     $("#lineChart").html('');
@@ -2093,7 +2096,7 @@ function monthlyLoad(lastMonStartDate, lastMonEndDate, currMonStartDate, currMon
                     })
                     .attr("text-anchor", "middle")
                     .text((d) => {
-                        return d.data.result;
+                        return d.data.result + "%";
                     });
 
                 var legendG = g.selectAll(".legend")
@@ -2215,98 +2218,7 @@ function monthlyLoad(lastMonStartDate, lastMonEndDate, currMonStartDate, currMon
     })
     /* END OF PIE CHART */
 
-
-    /* START OF LINE CHART */
-    $(document).ready(() => {
-        // set the dimensions and margins of the graph
-        var margin = { top: 40, right: 20, bottom: 30, left: 150 },
-            width = 1250 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
-
-        // parse the date / time
-        var parseTime = d3.timeParse("%H:%M:%S");
-
-
-        // set the ranges
-        var x = d3.scaleTime().range([0, width]);
-        var y = d3.scaleLinear().range([height, 0]);
-
-        // define the line
-        var valueline = d3.line()
-            .x(function (d) { return x(d.availability_time); })
-            .y(function (d) { return y(d.total_hour_percentage); });
-
-        // append the svg obgect to the body of the page
-        // appends a 'group' element to 'svg'
-        // moves the 'group' element to the top left margin
-        var svgp = d3.select("#lineChart").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom);
-
-
-        var svg = svgp.append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        function draw(data) {
-            // format the data
-            data.forEach(function (d) {
-                d.availability_time = (parseTime(d.availability_time));
-                d.total_hour_percentage = d.total_hour_percentage;
-            });
-
-            // sort time ascending
-            data.sort(function (a, b) {
-                return a["availability_time"] - b["availability_time"];
-            })
-
-            // Scale the range of the data
-            x.domain(d3.extent(data, function (d) {
-                return d.availability_time;
-            }));
-            y.domain([0, d3.max(data, function (d) {
-                return Math.max(d.total_hour_percentage);
-            })]);
-            /*
-            y.domain([d3.min(data, d=>d.total_hour_percentage), 
-                d3.max(data, d=>d.total_hour_percentage)]);*/
-
-            // Add the valueline path.
-            svg.append("path")
-                .data([data])
-                .attr("class", "line")
-                .attr("d", valueline);
-            // Add the X Axis
-            svg.append("g")
-                .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x).ticks(d3.timeHour.every(1)).tickFormat(d3.timeFormat('%H:%M')));
-
-            // Add the Y Axis
-            svg.append("g")
-                .call(d3.axisLeft(y));
-        }
-
-        svgp.append('text')
-            .attr('class', 'title')
-            .attr('x', width / 2 + 170)
-            .attr('y', margin.top / 2)
-            .attr('text-anchor', 'middle')
-            .text('Overall performance of CAMs per hour by percentage(%): ');
-
-        // Get the data
-        var perHourResult = "/perHourAvailabilities/" + currMonStartDate + "/" + currMonEndDate;
-        //console.log(perHourResult);
-
-        d3.json(perHourResult)
-            .then((data) => {
-                draw(data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    });
-    /* END OF LINE CHART */
-
-    /* START OF HORIZONTAL LINE CHART */
+    /* START OF HORIZONTAL BAR CHART */
     $(document).ready(() => {
 
         // Get the data
@@ -2387,9 +2299,9 @@ function monthlyLoad(lastMonStartDate, lastMonEndDate, currMonStartDate, currMon
             });
 
     });
-    /* END OF HORIZONTAL LINE CHART */
+    /* END OF HORIZONTAL BAR CHART */
 
-    /* START OF HORIZONTAL LINE CHART */
+    /* START OF HORIZONTAL BAR CHART */
     $(document).ready(() => {
 
         // Get the data
@@ -2470,6 +2382,6 @@ function monthlyLoad(lastMonStartDate, lastMonEndDate, currMonStartDate, currMon
             });
 
     });
-    /* END OF HORIZONTAL LINE CHART */
+    /* END OF HORIZONTAL BAR CHART */
 
 }//end of function.monthlyLoad

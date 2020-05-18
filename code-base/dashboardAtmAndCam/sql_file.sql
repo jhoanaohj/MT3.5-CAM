@@ -546,4 +546,8 @@ FROM(
 	FROM dashboard.availability
 	)t
 
-    
+
+SELECT ROUND((count(*) filter (where planned = 'PLANNED') / count(*)::decimal *100),2) as planned,
+       ROUND((count(*) filter (where planned = 'UNPLANNED') / count(*)::decimal * 100),2) as unplanned
+FROM dashboard.event
+WHERE cast(event_start_adj AS DATE) = '2020-04-05'

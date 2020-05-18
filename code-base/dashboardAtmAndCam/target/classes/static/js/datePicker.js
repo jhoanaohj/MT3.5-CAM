@@ -2,7 +2,15 @@
 $(document).ready(() => {
 
     const defaultDate = '2020-04-15';
+    $("#divDateRange").html('');
+
+    
     defaultLoad(defaultDate);
+
+    d3.selectAll("#divDateRange")
+        .append("label")
+        .attr("style", "margin-right:10px")
+        .text("Date Picker: ");
 
 
     $(document).ready(() => {
@@ -11,9 +19,25 @@ $(document).ready(() => {
             console.log(selectedItem)
 
             if (selectedItem == 0) {
+                $("#bar-chart").html('');
+                $("#pieChart").html('');
+                $("#lineChart").html('');
+                $('#top5Downtime').html('');
+                $("#mostDown").html('');
+                $("#mostUp").html('');
+                $("#pieChart2").html('');
+                $("#barChart2").html('');
+                $("#barChart3").html('');
                 console.clear();
                 console.log("Default");
+
                 defaultLoad(defaultDate);
+                
+                $("#divDateRange").html('');
+                d3.selectAll("#divDateRange")
+                    .append("label")
+                    .attr("style", "margin-right:10px")
+                    .text("Date Picker: ");
 
             }
             else if (selectedItem == 1) {
@@ -31,8 +55,8 @@ $(document).ready(() => {
 
                 $("#divDateRange").html('');
                 d3.selectAll("#divDateRange")
-                    .append("em")
-                    .attr("class", "fas fa-calendar calendar");
+                    .append("label")
+                    .text("Date Picker: ");
 
                 d3.selectAll("#divDateRange")
                     .append("input")
@@ -64,6 +88,7 @@ $(document).ready(() => {
                 //function dailyLoad()
                 console.log("Daily");
 
+                $("#divDateRange").html('');
                 $("#bar-chart").html('');
                 $("#pieChart").html('');
                 $("#lineChart").html('');
@@ -75,8 +100,8 @@ $(document).ready(() => {
                 $("#barChart3").html('');
 
                 d3.selectAll("#divDateRange")
-                    .append("em")
-                    .attr("class", "fas fa-calendar calendar");
+                    .append("label")
+                    .text("Date Picker: ");
 
                 d3.selectAll("#divDateRange")
                     .append("input")
@@ -114,11 +139,13 @@ $(document).ready(() => {
                 $('#top5Downtime').html('');
                 $("#mostDown").html('');
                 $("#mostUp").html('');
+                $("#pieChart2").html('');
+                $("#barChart2").html('');
+                $("#barChart3").html('');
 
                 d3.selectAll("#divDateRange")
-                    .append("span")
-                    .append("em")
-                    .attr("class", "fas fa-calendar calendar");
+                    .append("label")
+                    .text("Date Picker: ");
 
                 d3.selectAll("#divDateRange")
                     .append("input")
@@ -184,11 +211,13 @@ $(document).ready(() => {
                 $('#top5Downtime').html('');
                 $("#mostDown").html('');
                 $("#mostUp").html('');
+                $("#pieChart2").html('');
+                $("#barChart2").html('');
+                $("#barChart3").html('');
 
                 d3.selectAll("#divDateRange")
-                    .append("span")
-                    .append("em")
-                    .attr("class", "fas fa-calendar calendar");
+                    .append("label")
+                    .text("Date Picker: ");
 
                 d3.selectAll("#divDateRange")
                     .append("input")
@@ -268,52 +297,7 @@ $(document).ready(() => {
                     monthlyLoad(startLastMonthDate, endLastMonthDate, startCurrMonthDate, endCurrMonthDate, startNextMonthDate, endNextMonthDate)
                 });
             }
-            else if(selectedItem == 5){
-                $("#bar-chart").html('');
-                $("#pieChart").html('');
-                $("#lineChart").html('');
-                $('#top5Downtime').html('');
-                $("#mostDown").html('');
-                $("#mostUp").html('');
-                $("#pieChart2").html('');
-                $("#barChart2").html('');
-                $("#barChart3").html('');
-
-                $("#divDateRange").html('');
-                d3.selectAll("#divDateRange")
-                    .append("em")
-                    .attr("class", "fas fa-calendar calendar");
-
-                d3.selectAll("#divDateRange")
-                    .append("input")
-                    .attr("type", "text")
-                    .attr("id", "daterange")
-                    .attr("class", "form-control")
-                    .attr("style", "cursor: pointer");
-
-                $('#daterange').daterangepicker({
-                    opens: 'center',
-                    showDropdowns: true,
-                    batchMode: 'week',
-                    showShortcuts: false,
-                    locale: {
-                        format: 'YYYY/MM/DD'
-                    }
-                }, function (start, end, label) {
-                    var summaryStartDate = start.format('YYYY-MM-DD');
-                    var summaryEndDate = end.format('YYYY-MM-DD');
-                    window.alert("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                    rangeLoad(summaryStartDate, summaryEndDate);
-                })
-            }
-
         })
     });
 });
-
-
-
-
-
-
 //bookmark

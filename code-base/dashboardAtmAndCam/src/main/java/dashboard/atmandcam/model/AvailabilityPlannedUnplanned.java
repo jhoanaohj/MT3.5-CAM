@@ -13,23 +13,35 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @SqlResultSetMapping(name = "plannedUnplannedResult", classes = {
 		@ConstructorResult(targetClass = dashboard.atmandcam.model.AvailabilityPlannedUnplanned.class, columns = {
 				@ColumnResult(name = "planned", type = String.class),
-				@ColumnResult(name = "results", type = Integer.class) 
+				@ColumnResult(name = "results", type = Double.class) 
 				}) 
 		})
 
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "GetPlannedUnplannedSingle.getData", 
-				query = "SELECT planned,COUNT(*) AS results\r\n" + 
+				query = "SELECT\r\n" + 
+						"unnest(array['Planned', 'Unplanned']) AS planned,\r\n" + 
+						"unnest(array[planned, unplanned]) AS results\r\n" + 
+						"FROM(\r\n" + 
+						"SELECT\r\n" + 
+						"ROUND((count(*) filter (where planned = 'PLANNED') / cast(count(*) as decimal) * 100),2) as planned,\r\n" + 
+						"ROUND((count(*) filter (where planned = 'UNPLANNED') / cast(count(*) as decimal) * 100),2) as unplanned\r\n" + 
 						"FROM dashboard.event\r\n" + 
 						"WHERE cast(event_start_adj AS DATE) = ?1\r\n" + 
-						"GROUP BY planned", 
+						")t", 
 				resultSetMapping = "plannedUnplannedResult"),
 
 		@NamedNativeQuery(name = "GetPlannedUnplannedRanged.getData", 
-		query = "SELECT planned,COUNT(*) AS results\r\n" + 
+		query = "SELECT\r\n" + 
+				"unnest(array['Planned', 'Unplanned']) AS planned,\r\n" + 
+				"unnest(array[planned, unplanned]) AS results\r\n" + 
+				"FROM(\r\n" + 
+				"SELECT\r\n" + 
+				"ROUND((count(*) filter (where planned = 'PLANNED') / cast(count(*) as decimal) * 100),2) as planned,\r\n" + 
+				"ROUND((count(*) filter (where planned = 'UNPLANNED') / cast(count(*) as decimal) * 100),2) as unplanned\r\n" + 
 				"FROM dashboard.event\r\n" + 
-				"WHERE cast(event_start_adj AS DATE) BETWEEN ?1 AND ?2\r\n" + 
-				"GROUP BY planned", 
+				"WHERE cast(event_start_adj AS DATE) BETWEEN ?1 AND ?2 \r\n" + 
+				")t", 
 				resultSetMapping = "plannedUnplannedResult") 
 		})
 
@@ -43,9 +55,9 @@ public class AvailabilityPlannedUnplanned {
 	private String plans;
 
 	@JsonProperty("result")
-	private int results;
+	private double results;
 
-	public AvailabilityPlannedUnplanned(String planned, int results) {
+	public AvailabilityPlannedUnplanned(String planned, double results) {
 		super();
 		this.plans = planned;
 		this.results = results;
